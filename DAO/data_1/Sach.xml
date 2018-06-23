@@ -1,0 +1,5 @@
+<DanhSachSach>
+    <Sach id="1" Ten="Than Dong Dat Viet" TheLoai="Truyen Tranh" TacGia="NXB Kim Dong" SoLuong="200" DonGia="14000"/>
+    <Sach id="2" Ten="Doreamon" TheLoai="Truyen Tranh" TacGia="NXB Kim Dong" SoLuong="350" DonGia="49000"/>
+    <Sach id="3" Ten="Emyth" TheLoai="Kinh Doanh" TacGia="NXB Tre" SoLuong="1000" DonGia="119000"/>
+</DanhSachSach>

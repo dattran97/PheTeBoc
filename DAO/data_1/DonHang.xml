@@ -1,0 +1,5 @@
+<DanhSachDonHang>
+    <DonHang id="1" idSach="1" idKhachHang="1" idNhanVien="1" SoLuongBan="20" NgayTao="1/6/2018" TongTien="280000" TienThu="200000" TienNo="80000"/>
+    <DonHang id="2" idSach="2" idKhachHang="1" idNhanVien="3" SoLuongBan="10" NgayTao="4/6/2018" TongTien="490000" TienThu="490000" TienNo="0"/>
+    <DonHang id="3" idSach="2" idKhachHang="2" idNhanVien="3" SoLuongBan="100" NgayTao="10/6/2018" TongTien="4900000" TienThu="4800000" TienNo="10000"/>
+</DanhSachDonHang>

@@ -1,0 +1,44 @@
+<DanhSachSach>
+    <Sach id="1" Ten="Than Dong Dat Viet" TheLoai="Truyen Tranh" TacGia="NXB Kim Dong" SoLuong="200" DonGia="14000">
+        <DanhSachNhap>
+            <NhapSach SoLuongNhap="10" NgayNhap="1/6/2018"/>
+            <NhapSach SoLuongNhap="10" NgayNhap="2/6/2018"/>
+            <NhapSach SoLuongNhap="200" NgayNhap="4/6/2018"/>
+            <NhapSach SoLuongNhap="50" NgayNhap="10/6/2018"/>
+            <NhapSach SoLuongNhap="40" NgayNhap="6/7/2018"/>
+            <NhapSach SoLuongNhap="100" NgayNhap="20/8/2018"/>
+        </DanhSachNhap>
+        <DanhSachDonHang>
+            <DonHang TenKhachHang="Tran Van A" SoLuongBan="20" NgayTao="1/6/2018" TongTien="280000" TienThu="200000" TienNo="80000"/>
+            <DonHang TenKhachHang="Tran Van B" SoLuongBan="20" NgayTao="4/6/2018" TongTien="280000" TienThu="200000" TienNo="80000"/>
+        </DanhSachDonHang>
+    </Sach>
+    <Sach id="2" Ten="Doreamon" TheLoai="Truyen Tranh" TacGia="NXB Kim Dong" SoLuong="350" DonGia="49000">
+        <DanhSachNhap>
+            <NhapSach SoLuongNhap="10" NgayNhap="1/6/2018"/>
+            <NhapSach SoLuongNhap="10" NgayNhap="2/6/2018"/>
+            <NhapSach SoLuongNhap="200" NgayNhap="4/6/2018"/>
+            <NhapSach SoLuongNhap="50" NgayNhap="10/6/2018"/>
+            <NhapSach SoLuongNhap="40" NgayNhap="6/7/2018"/>
+            <NhapSach SoLuongNhap="100" NgayNhap="20/8/2018"/>
+        </DanhSachNhap>
+        <DanhSachDonHang>
+            <DonHang TenKhachHang="Tran Van A" SoLuongBan="20" NgayTao="1/6/2018" TongTien="280000" TienThu="200000" TienNo="80000"/>
+            <DonHang TenKhachHang="Tran Van B" SoLuongBan="20" NgayTao="4/6/2018" TongTien="280000" TienThu="200000" TienNo="80000"/>
+        </DanhSachDonHang>
+    </Sach>
+    <Sach id="3" Ten="Emyth" TheLoai="Kinh Doanh" TacGia="NXB Tre" SoLuong="1000" DonGia="119000">
+        <DanhSachNhap>
+            <NhapSach SoLuongNhap="10" NgayNhap="1/6/2018"/>
+            <NhapSach SoLuongNhap="10" NgayNhap="2/6/2018"/>
+            <NhapSach SoLuongNhap="200" NgayNhap="4/6/2018"/>
+            <NhapSach SoLuongNhap="50" NgayNhap="10/6/2018"/>
+            <NhapSach SoLuongNhap="40" NgayNhap="6/7/2018"/>
+            <NhapSach SoLuongNhap="100" NgayNhap="20/8/2018"/>
+        </DanhSachNhap>
+        <DanhSachDonHang>
+            <DonHang TenKhachHang="Tran Van A" SoLuongBan="20" NgayTao="1/6/2018" TongTien="280000" TienThu="200000" TienNo="80000"/>
+            <DonHang TenKhachHang="Tran Van B" SoLuongBan="20" NgayTao="4/6/2018" TongTien="280000" TienThu="200000" TienNo="80000"/>
+        </DanhSachDonHang>
+    </Sach>
+</DanhSachSach>
