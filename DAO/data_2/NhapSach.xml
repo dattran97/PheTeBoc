@@ -1,6 +1,0 @@
-<DanhSachNhapSach>
-    <NhapSach id="1" idSach="1" SoLuongNhap="10" NgayNhap="1/6/2018"/>
-    <NhapSach id="2" idSach="2" SoLuongNhap="20" NgayNhap="2/6/2018"/>
-    <NhapSach id="3" idSach="3" SoLuongNhap="50" NgayNhap="10/6/2018"/>
-    <NhapSach id="4" idSach="3" SoLuongNhap="5" NgayNhap="14/6/2018"/>
-</DanhSachNhapSach>
