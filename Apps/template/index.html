@@ -5,9 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Lumino - Dashboard</title>
 
-<link href="assets/css/bootstrap.min.css" rel="stylesheet">
-<link href="assets/css/datepicker3.css" rel="stylesheet">
-<link href="assets/css/styles.css" rel="stylesheet">
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/datepicker3.css" rel="stylesheet">
+<link href="css/styles.css" rel="stylesheet">
 
 <!--[if lt IE 9]>
 <script src="js/html5shiv.js"></script>
@@ -26,14 +26,14 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="#"><span>iBookStore</span>Admin</a>
+				<a class="navbar-brand" href="#"><span>Lumino</span>Admin</a>
 				<ul class="user-menu">
 					<li class="dropdown pull-right">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span> <span id="username">NguyenVanA</span> <span class="caret"></span></a>
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span> User <span class="caret"></span></a>
 						<ul class="dropdown-menu" role="menu">
-							<li><a href="#"><span class="glyphicon glyphicon-user"></span> Tài khoản</a></li>
-							<li><a href="#"><span class="glyphicon glyphicon-cog"></span> Cài đặt</a></li>
-							<li><a href="#"><span class="glyphicon glyphicon-log-out"></span> Đăng xuất</a></li>
+							<li><a href="#"><span class="glyphicon glyphicon-user"></span> Profile</a></li>
+							<li><a href="#"><span class="glyphicon glyphicon-cog"></span> Settings</a></li>
+							<li><a href="#"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
 						</ul>
 					</li>
 				</ul>
@@ -48,13 +48,12 @@
 		</form>
 		<ul class="nav menu">
 			<li class="active"><a href="index.html"><span class="glyphicon glyphicon-dashboard"></span> Dashboard</a></li>
-			<li><a href="tracuu.html"><span class="glyphicon glyphicon-search"></span> Tra cứu sách</a></li>
-			<li><a href="bansach.html"><span class="glyphicon glyphicon-list-alt"></span> Lập Hóa đơn Bán sách</a></li>
-			<li><a href="nhapsach.html"><span class="glyphicon glyphicon-list-alt"></span> Lập Phiếu nhập sách</a></li>
-			<li><a href="thutien.html"><span class="	glyphicon glyphicon-list-alt"></span> Lập Phiếu thu tiền</a></li>
-            <li><a href="baocaothang.html"><span class="glyphicon glyphicon-stats"></span> Lập báo cáo tháng </a></li>
-            <li><a href="doiquidinh.html"><span class="glyphicon glyphicon-cog"></span> Thay đổi qui định</a></li>
-			<!-- <li class="parent ">
+			<li><a href="widgets.html"><span class="glyphicon glyphicon-th"></span> Widgets</a></li>
+			<li><a href="charts.html"><span class="glyphicon glyphicon-stats"></span> Charts</a></li>
+			<li><a href="tables.html"><span class="glyphicon glyphicon-list-alt"></span> Tables</a></li>
+			<li><a href="forms.html"><span class="glyphicon glyphicon-pencil"></span> Forms</a></li>
+			<li><a href="panels.html"><span class="glyphicon glyphicon-info-sign"></span> Alerts &amp; Panels</a></li>
+			<li class="parent ">
 				<a href="#">
 					<span class="glyphicon glyphicon-list"></span> Dropdown <span data-toggle="collapse" href="#sub-item-1" class="icon pull-right"><em class="glyphicon glyphicon-s glyphicon-plus"></em></span> 
 				</a>
@@ -75,9 +74,9 @@
 						</a>
 					</li>
 				</ul>
-			</li> -->
-			<!-- <li role="presentation" class="divider"></li>
-			<li><a href="login.html"><span class="glyphicon glyphicon-user"></span> Login Page</a></li> -->
+			</li>
+			<li role="presentation" class="divider"></li>
+			<li><a href="login.html"><span class="glyphicon glyphicon-user"></span> Login Page</a></li>
 		</ul>
 	</div><!--/.sidebar-->
 		
@@ -351,13 +350,13 @@
 		</div><!--/.row-->
 	</div>	<!--/.main-->
 
-	<script src="assets/js/jquery-1.11.1.min.js"></script>
-	<script src="assets/js/bootstrap.min.js"></script>
-	<script src="assets/js/chart.min.js"></script>
-	<script src="assets/js/chart-data.js"></script>
-	<script src="assets/js/easypiechart.js"></script>
-	<script src="assets/js/easypiechart-data.js"></script>
-	<script src="assets/js/bootstrap-datepicker.js"></script>
+	<script src="js/jquery-1.11.1.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/chart.min.js"></script>
+	<script src="js/chart-data.js"></script>
+	<script src="js/easypiechart.js"></script>
+	<script src="js/easypiechart-data.js"></script>
+	<script src="js/bootstrap-datepicker.js"></script>
 	<script>
 		$('#calendar').datepicker({
 		});
