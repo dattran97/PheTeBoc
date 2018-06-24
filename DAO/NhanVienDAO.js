@@ -12,7 +12,7 @@ login = (user) => {
     let users = data.DanhSachNhanVien.NhanVien;
     
     let user = users.filter((user) => {
-      return user.Email === email && user.Password === password;
+      return user.Email === email && user.MatKhau === password;
     });
 
     if (user.length < 1) reject({err: 'username or password in correct'})

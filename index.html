@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="root">
+    <input type="text" id="email">
+    <input type="text" id="password">
+    <button id="showBtn">show</button>
+  </div>
+
+
+  <script>
+    document.getElementById('showBtn').addEventListener('click', () => {
+
+      let email = document.getElementById('email').value;
+      let password = document.getElementById('password').value;
+
+      let url = 'http://localhost:3000/login'
+      let data = {
+        email,
+        password
+      }
+      let fetchData = {
+        method: 'POST',
+        body: JSON.stringify(data),
+        headers: new Headers()
+      }
+      fetch(url, fetchData)
+        .then(data => data.json())
+        .then(data => {
+          console.log(data);
+        })
+        .catch(err => {
+          console.log(err);
+        });
+    })
+  </script>
+</body>
+
+</html>
