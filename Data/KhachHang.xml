@@ -1,7 +1,7 @@
 <DanhSachKhachHang>
     <KhachHang id="1" HoTen="Tran Van A" Email="tranvana@gmail.com" DiaChi="Quan 2, TPHCM" DienThoai="0962762123">
         <DanhSachDonHang>
-            <DonHang id="1" idNhanVien="1" NgayTao="1/6/2018" TongTien="280000" TienThu="200000" TienNo="80000">
+            <DonHang id="1" idNhanVien="1" Ngay="1/6/2018" TongTien="280000" TienThu="200000" TienNo="80000">
                 <GioHang>
                     <Sach id="1" SoLuong="20"/>
                     <Sach id="2" SoLuong="20"/>
@@ -9,15 +9,18 @@
                 </GioHang>
             </DonHang>
         </DanhSachDonHang>
+        <DanhSachThu>
+            <PhieuThu id="1" Ngay="2/6/2018" TienThu="80000"/>>
+        </DanhSachThu>
     </KhachHang>
     <KhachHang id="2" HoTen="Tran Van B" Email="tranvanb@gmail.com" DiaChi="Quan Tan Binh, TPHCM" DienThoai="01213762123">
         <DanhSachDonHang>
-            <DonHang id="2" idNhanVien="3" NgayTao="4/6/2018" TongTien="5000000" TienThu="5000000" TienNo="0">
+            <DonHang id="2" idNhanVien="3" Ngay="4/6/2018" TongTien="5000000" TienThu="5000000" TienNo="0">
                 <GioHang>
                     <Sach id="1" SoLuong="20"/>
                 </GioHang>
             </DonHang>
-            <DonHang id="2" idNhanVien="3" NgayTao="10/6/2018" TongTien="490000" TienThu="480000" TienNo="10000">
+            <DonHang id="2" idNhanVien="3" Ngay="10/6/2018" TongTien="490000" TienThu="480000" TienNo="10000">
                 <GioHang>
                     <Sach id="1" SoLuong="20"/>
                     <Sach id="2" SoLuong="20"/>
