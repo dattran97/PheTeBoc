@@ -1,17 +1,15 @@
 var http = require('http');
 
-let nhanVien = require('../BUS/NhanVienBUS');
-
+let nhanVien = require('../BUS/modules/NhanVienBUS');
 
 //create a server object:
 http.createServer(function (req, res) {
-	res.writeHead(200, { 'Content-Type': 'text/html' }); // http header
 	const headers = {
-    'Access-Control-Allow-Origin': '*',
+		'Access-Control-Allow-Origin': '*',
 		"Access-Control-Allow-Headers": 'Origin, X-Requested-With, Content-Type, Accept, Authorization',
 		'Access-Control-Allow-Headers': 'X-Requested-With',
-  	"Access-Control-Allow-Methods": "GET, POST, OPTIONS, PUT, DELETE"
-  };
+		"Access-Control-Allow-Methods": "GET, POST, OPTIONS, PUT, DELETE"
+	};
 	var url = req.url;
 	var method = req.method;
 
