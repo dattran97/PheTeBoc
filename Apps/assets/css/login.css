@@ -1,6 +1,17 @@
 body {
     background-color: #9e9e9f;
 }
-#verify {
-    display: none;
+.error{
+    border: 1px solid red;
+}
+.error:focus{
+    /* border: 2px solid red; */
+    outline: 2px solid red;
+}
+.success{
+    border: 1px solid green;
+}
+.success:focus{
+    /* border: 2px solid green; */
+    outline: 2px solid green;
 }

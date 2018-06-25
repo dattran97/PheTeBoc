@@ -8,9 +8,10 @@
             return true;
         }
         if (re.test(mail)) {
+            console.log('Email hop le!')
             return (true)
         }
-        console.log("Email không hợp lệ!")
+        console.log("Email không hợp lệ!");
         return (false)
     }
     //Time interval for auto validating 
@@ -26,10 +27,17 @@
     //on keydown, clear the countdown 
     email.on('keydown', function () {
         clearTimeout(typingTimer);
+        email.removeClass('error').removeClass('success');
     });
     //user is "finished typing," do something
     function emailDoneTyping() {
-        ValidateEmail(email.val());
+        if(!ValidateEmail(email.val())){ //Email ko hop le
+            email.addClass('error');
+        }
+        else{
+            email.removeClass('error'); //if exist
+            email.addClass('success');
+        }
     }
 
     //
