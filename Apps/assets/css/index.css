@@ -1,7 +1,10 @@
 
 .main{
-    background-color: #e6d5d5;
-    height: 1000px;
+    background-color: #ffffff;
+}
+.main .row{
+    
+    padding: 0 15px 15px 15px;
 }
 .footer{
     background-color: bisque;
@@ -21,15 +24,22 @@ body{
 .navbar input{
     border:0;
     background-color: white;
-    color:black;
 }
 .navbar {
     overflow: hidden;
-    margin-bottom:0;
+    margin-bottom:5px;
 }
 .navbar .input-group {
     transform: translateX(-2%);
     float: right;
+}
+.navbar input.form-control:focus {
+    background-color:  cornsilk;
+    color:black;
+    outline: 2px solid blue;
+}
+.navbar input.form-control{
+    color:black;
 }
 #loginBtn{
     display:  block;
@@ -46,4 +56,39 @@ body{
     margin: 10px 0 0 10px;
     background-image: url('../imgs/LogoMakr_9XA8pl.png');
     background-size: cover;
+}
+/*  */
+
+.productView{
+    border: 2px solid grey;
+    min-height:500px;
+}
+.productItem{
+    width: 220px;
+    background-color: rgb(255, 255, 255);
+    float:left;
+    margin: 15px 0 0 15px;
+
+outline: 1px solid rgb(211, 211, 211);
+}
+.productItem:hover{
+    -webkit-box-shadow: 0px 0px 17px 3px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 0px 17px 3px rgba(0,0,0,0.75);
+box-shadow: 0px 0px 17px 3px rgba(0,0,0,0.75);
+}
+/* .productItem img{
+    padding-top:5px;
+} */
+.productItem > a {
+    text-decoration: none;
+}
+.productName, 
+.productPrice {
+    padding: 0 5px;
+}
+.productItem > a:hover .productName {
+    color: salmon;
+}
+.productPrice{
+    color:red;
 }
