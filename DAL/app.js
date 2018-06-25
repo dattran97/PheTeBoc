@@ -1,6 +1,13 @@
+var Cache = require('./cache');
 var http = require('http');
+const config = require('config');
 
-let nhanVien = require('../BUS/modules/NhanVienBUS');
+var cacheData = Cache.CacheData;
+
+let getMethod = require('./services/getMethod');
+let postMethod = require('./services/postMethod');
+
+const port = 3001;
 
 //create a server object:
 http.createServer(function (req, res) {
@@ -20,32 +27,27 @@ http.createServer(function (req, res) {
 					res.writeHead(200, headers);
 					res.write('index');
 					res.end();
-					return
+					break
 				case '/users':
-					res.writeHead(200, headers);
-					res.write('get all user');
-					res.end();
-					return
+					res.writeHeader(200, {'Content-Type': 'text/json'})
+					var data = cacheData.User();
+					res.end(data);
+				default: break
 			}
-
 			return
 		case 'POST':
 			switch (url) {
-				case '/':
-					res.writeHead(200, headers);
-					res.write('index pots');
-					res.end();
-					return
-				case '/login':
-					res.writeHead(200, headers);
-					nhanVien.loginHandler(req, res);
-					
-					return
+				default: break
 			}
 			return
+		default: break
 	}
 
-}).listen(3000, function () {
-	console.log("server start at port 3000"); //the server object listens on port 3000
-}); 
+}).listen(config.port, err => {
+    if (err != null) {
+        console.log('==> Error: ', err);
+    } else {
+        console.log('Server is starting at port ' + config.port);
+    }
+}) 
 
