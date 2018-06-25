@@ -1,0 +1,49 @@
+
+.main{
+    background-color: #e6d5d5;
+    height: 1000px;
+}
+.footer{
+    background-color: bisque;
+}
+#myCarousel img{
+    height:500px;
+    margin:auto;
+}
+body{
+    background-color: dimgray;
+    padding-top:0;
+    overflow-y: scroll;
+}
+/* header */
+
+/* navbar */
+.navbar input{
+    border:0;
+    background-color: white;
+    color:black;
+}
+.navbar {
+    overflow: hidden;
+    margin-bottom:0;
+}
+.navbar .input-group {
+    transform: translateX(-2%);
+    float: right;
+}
+#loginBtn{
+    display:  block;
+    position:  absolute;
+    z-index: 10;
+    right: 0;
+}
+.logo{
+    display: block;
+    position:  absolute;
+    z-index: 1;
+    min-height:  250px;
+    min-width: 400px;
+    margin: 10px 0 0 10px;
+    background-image: url('../imgs/LogoMakr_9XA8pl.png');
+    background-size: cover;
+}
