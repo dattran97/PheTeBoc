@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.html",
   "scripts": {
-    "start": "nodemon BUS/app.js",
+    "start": "node DAL/app.js & node BUS/app.js &&  fg",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

@@ -1,13 +1,11 @@
 const app = require('http');
 const url = require('url');
 const request = require('request');
-const config = require('config');
+var config = require('./config');
 
-let postMethod = require('../DAL/services/postMethod');
+let dalURL = 'http://localhost:3001'
 
-const dalURL = 'http://localhost:3001/'
-
-// let sessions = [];
+let sessions = [];
 
 // function checkSession(userId) {
 //     console.log(session)
@@ -30,12 +28,38 @@ app.createServer((req, res) => {
         case 'GET':
             switch (req.url) {
                 case '/users':
+
             }
             break;
         case 'POST':
+            req.on('data', chunk => {
+                req.body = JSON.parse(chunk);
+                console.log(req.body);
+            });
             switch (req.url) {
-                
-                default: break
+                case '/login':
+                var options = {
+                    uri: dalURL + req.url,
+                    body: req.body,
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                }
+                request(options, (err,resp,data) => {
+                    if (!err && resp.statusCode == 200) {
+                        res.writeHeader(200, {'Content-Type': 'text/json'})
+                        console.log(resp);
+                        console.log(data);
+                        res.write(JSON.stringify(data));
+                        res.end();
+                    }else{
+                        res.writeHeader(400, {'Content-Type': 'text/json'})
+                        res.write(JSON.stringify(err));
+                        res.end();
+                    }
+                });
+                break
             }
         case 'PUT':
             break;

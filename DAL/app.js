@@ -1,13 +1,8 @@
-var Cache = require('./cache');
 var http = require('http');
-const config = require('config');
-
-var cacheData = Cache.CacheData;
+var config = require('./config');
 
 let getMethod = require('./services/getMethod');
 let postMethod = require('./services/postMethod');
-
-const port = 3001;
 
 //create a server object:
 http.createServer(function (req, res) {
@@ -30,13 +25,34 @@ http.createServer(function (req, res) {
 					break
 				case '/users':
 					res.writeHeader(200, {'Content-Type': 'text/json'})
-					var data = cacheData.User();
+					var data = getMethods.getListUser();
 					res.end(data);
 				default: break
 			}
 			return
 		case 'POST':
+			body = '';
+            req.on('data', chunk => {
+				console.log(chunk);
+                body += JSON.parse(chunk);
+            });
 			switch (url) {
+				case '/login':
+                    req.on('end', () => {
+						console.log(body);
+                        postMethod.login(body)
+                        .then(data => {
+							res.writeHeader(200, {'Content-Type': 'text/json'})
+							res.write(JSON.stringify(data));
+							res.end();
+                        })
+                        .catch(err => {
+							res.writeHeader(400, {'Content-Type': 'text/json'})
+							res.write(JSON.stringify(err));
+							res.end();
+                        })
+                    });
+                    break
 				default: break
 			}
 			return
@@ -45,7 +61,7 @@ http.createServer(function (req, res) {
 
 }).listen(config.port, err => {
     if (err != null) {
-        console.log('==> Error: ', err);
+        console.log('Error: ', err);
     } else {
         console.log('Server is starting at port ' + config.port);
     }
