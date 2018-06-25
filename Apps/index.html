@@ -1,13 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>iCamera - Trang chủ</title>
+    <link rel="stylesheet" href="./assets/vendor/css/bootstrap-theme.min.css">
+
+<link rel="stylesheet" href="./assets/vendor/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <link rel="stylesheet" href="./assets/css/index.css">
 
 </head>
+
 <body>
-    
+    <div class="slider container">
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                <button type="button" class="btn btn-default btn-sm" id="loginBtn">
+                        <i class="glyphicon glyphicon-log-in"></i> Đăng nhập
+                      </button>
+                      <div class="logo">
+                            <!-- <img src="./assets/imgs///LogoMakr_9XA8pl.png" alt="LogoMakr_2clwJR"> -->
+                      </div> 
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+                <li data-target="#myCarousel" data-slide-to="3"></li>
+            </ol>
+
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner">
+                <div class="item active">
+                    <img src="./assets/imgs/shooting_time_lapses_photography-wallpaper-2560x1600-2.jpg">
+                </div>
+
+                <div class="item">
+                    <img src="./assets/imgs/nikon-camera-17348-2560x1600-2.jpg">
+                </div>
+
+                <div class="item">
+                    <img src="./assets/imgs/6249910-nikon-wallpapers-2.jpg">
+                </div>
+                <div class="item">
+                    <img src="./assets/imgs/Canon-Camera-HD-Wallpapers-2-2.jpg">
+                </div>
+            </div>
+            <!-- <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right"></span>
+                        <span class="sr-only">Next</span>
+                    </a> -->
+        </div>
+    </div>
+    <!-- Navigationbar -->
+    <div class="container">
+        <nav class="navbar navbar-inverse" id="mNavbar">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav navbar-nav">
+                        <li class="active">
+                            <a href="javascript:;">Trang Chủ</a>
+                        </li>
+                        <li>
+                            <a href="javascript:;">Liên hệ</a>
+                        </li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <!-- <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li> -->
+                        <form class="navbar-form" action="/action_page.php">
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Search" name="search">
+                                <div class="input-group-btn">
+                                    <button class="btn btn-default" type="submit">
+                                        <i class="glyphicon glyphicon-search"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+
+                        <!-- <li><a href="javascript:;"><span class="glyphicon glyphicon-log-in"></span> Login</a></li> -->
+                        <!-- End form -->
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <!-- End of navigation bar -->
+    <!-- End of header -->
+    <div class="container">
+        <div class="main">
+            This is main
+        </div>
+    </div>
+    <div class="footer container">
+        This is footer
+    </div>
 </body>
+<script src="./assets/vendor/js/jquery-1.11.1.min.js"></script>
+<script src="./assets/vendor/js/bootstrap.min.js"></script>
+<script src="./assets/js/index.js"></script>
+
 </html>
