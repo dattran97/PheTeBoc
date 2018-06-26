@@ -27,10 +27,22 @@ http.createServer(function (req, res) {
 					res.writeHeader(200, {'Content-Type': 'text/json'})
 					var data = getMethod.getListUser();
 					res.end(data);
+					break
 				case '/products':
 					res.writeHeader(200, {'Content-Type': 'text/json'})
 					var data = getMethod.getListProduct();
 					res.end(data);
+					break
+				case '/bills':
+					res.writeHeader(200, {'Content-Type': 'text/json'})
+					var data = getMethod.getListBill();
+					res.end(data);
+					break
+				case '/suppliers':
+					res.writeHeader(200, {'Content-Type': 'text/json'})
+					var data = getMethod.getListSupplier();
+					res.end(data);
+					break
 				default: break
 			}
 			return

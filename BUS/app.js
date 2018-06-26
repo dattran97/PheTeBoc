@@ -4,6 +4,8 @@ const request = require('request');
 var config = require('./config');
 var User = require('./services/user');
 var Product = require('./services/product');
+var Bill = require('./services/bill');
+var Supplier = require('./services/supplier');
 
 let dalURL = 'http://localhost:3001';
 
@@ -28,25 +30,27 @@ app.createServer((req, res) => {
     console.log(`${req.method} ${req.url}`);
     switch (req.method) {
         case 'GET':
+            res.writeHead(200, {
+                'Content-Type': 'text/json'
+            });
             switch (req.url) {
                 case '/users':
-                    res.writeHead(200, {
-                        'Content-Type': 'text/json'
-                    });
                     res.end(User.list());
                     break
                 case '/products':
-                    res.writeHead(200, {
-                        'Content-Type': 'text/json'
-                    });
                     res.end(Product.list());
+                    break
+                case '/bills':
+                    res.end(Bill.list());
+                    break
+                case '/suppliers':
+                    res.end(Supplier.list());
                     break
                 default: break
             }
         case 'POST':
             req.on('data', chunk => {
-                req.body = JSON.parse(chunk);
-                console.log(req.body);
+                req.body = chunk;
             });
             switch (req.url) {
                 case '/login':

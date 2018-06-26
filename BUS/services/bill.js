@@ -6,7 +6,7 @@ class Bill {
 
     //GET - /bills
     list() {
-        // return cacheData.getListBill();
+        return cacheData.getListBill();
     }
 
 }
