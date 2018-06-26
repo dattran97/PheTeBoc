@@ -68,13 +68,15 @@ body {
 
 .productView {
     border: 2px solid grey;
-    min-height: 700px;
+    /* min-height: 700px; */
+    height:700px;
     padding-bottom: 20px;
     padding-right:20px;
 }
 
 .productItem {
     width: 250px;
+    height: 350px;
     background-color: rgb(255, 255, 255);
     float: left;
     margin: 20px 0 0 20px;
@@ -93,6 +95,7 @@ body {
 
 .productItem>a {
     text-decoration: none;
+    color: black;
 }
 
 .productName,

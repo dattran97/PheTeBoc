@@ -31,21 +31,21 @@ $(document).ready(function () {
     var $productView = $('.productView');
     var $listItem = $('.productView > div');
     var $firstItem = $listItem.first();
-
-    var hanldWindowSizing = function(){
-        var viewWidth = parseInt($productView.css('width'),10);
-        var itemWidth = parseInt($firstItem.css('width'),10);
-
-        var itemsPerRow = Math.floor(viewWidth/(itemWidth + parseInt($firstItem.css('padding-left'),10)));
-
+    var itemHeight = parseInt($firstItem.css('height'));
+   
+    var handleSizing = function(){
+        var viewWidth = parseInt($productView.css('width'));
+        var itemWidth = parseInt($firstItem.css('width'));
+        var itemsPerRow = Math.floor(viewWidth/(itemWidth + parseInt($firstItem.css('padding-left'))));
         //set height for $productView
         var maxItemPerCol = Math.ceil($listItem.length/itemsPerRow) ;
-
-        var viewHeight = maxItemPerCol * (parseInt($firstItem.css('height'),10) + parseInt($firstItem.css('margin-top'),10));
-        $productView.css('height',viewHeight + parseInt($productView.css('padding-bottom'),10));
+        var viewHeight = maxItemPerCol * (itemHeight + parseInt($firstItem.css('margin-top')));
+        $productView.css('height',viewHeight + parseInt($productView.css('padding-bottom')) + 'px');
     }
-    hanldWindowSizing(); //Called when load page with random width
+    //Called when load page with random width
+    handleSizing();
     $(window).on('resize',function(){ //listenner for resizing event
-        hanldWindowSizing();
+        console.log('resizing');
+        handleSizing();
     })
 });
