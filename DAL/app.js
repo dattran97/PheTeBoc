@@ -24,8 +24,12 @@ http.createServer(function (req, res) {
 					res.end();
 					break
 				case '/users':
-					res.writeHeader(200, {'Content-Type': 'text/json'})
-					var data = getMethods.getListUser();
+					res.writeHeader(200, {'Content-Type': 'text/xml'})
+					var data = getMethod.getListUser();
+					res.end(data);
+				case '/products':
+					res.writeHeader(200, {'Content-Type': 'text/xml'})
+					var data = getMethod.getListProduct();
 					res.end(data);
 				default: break
 			}

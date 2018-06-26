@@ -2,6 +2,8 @@ const app = require('http');
 const url = require('url');
 const request = require('request');
 var config = require('./config');
+var User = require('./services/user');
+var Product = require('./services/product');
 
 let dalURL = 'http://localhost:3001'
 
@@ -28,9 +30,19 @@ app.createServer((req, res) => {
         case 'GET':
             switch (req.url) {
                 case '/users':
-
+                    res.writeHead(200, {
+                        'Content-Type': 'text/xml'
+                    });
+                    res.end(User.list());
+                    break
+                case '/products':
+                    res.writeHead(200, {
+                        'Content-Type': 'text/xml'
+                    });
+                    res.end(Product.list());
+                    break
+                default: break
             }
-            break;
         case 'POST':
             req.on('data', chunk => {
                 req.body = JSON.parse(chunk);
@@ -40,7 +52,8 @@ app.createServer((req, res) => {
                 case '/login':
                 var options = {
                     uri: dalURL + req.url,
-                    body: req.body,
+                    json: true,
+                    body: JSON.stringify(req.body),
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
@@ -51,8 +64,8 @@ app.createServer((req, res) => {
                         res.writeHeader(200, {'Content-Type': 'text/json'})
                         console.log(resp);
                         console.log(data);
-                        res.write(JSON.stringify(data));
-                        res.end();
+                        // res.write(JSON.stringify(data));
+                        res.end(data);
                     }else{
                         res.writeHeader(400, {'Content-Type': 'text/json'})
                         res.write(JSON.stringify(err));
@@ -60,6 +73,7 @@ app.createServer((req, res) => {
                     }
                 });
                 break
+                default: break
             }
         case 'PUT':
             break;
