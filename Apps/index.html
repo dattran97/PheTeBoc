@@ -8,7 +8,7 @@
     <title>iCamera - Trang chủ</title>
     <link rel="stylesheet" href="./assets/vendor/css/bootstrap-theme.min.css">
 
-<link rel="stylesheet" href="./assets/vendor/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/vendor/css/bootstrap.min.css">
     <link rel="stylesheet" href="./assets/css/styles.css">
     <link rel="stylesheet" href="./assets/css/index.css">
 
@@ -17,12 +17,10 @@
 <body>
     <div class="slider container">
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
-                <button type="button" class="btn btn-default btn-sm" id="loginBtn">
-                        <i class="glyphicon glyphicon-log-in"></i> Đăng nhập
-                      </button>
-                      <div class="logo">
-                            <!-- <img src="./assets/imgs///LogoMakr_9XA8pl.png" alt="LogoMakr_2clwJR"> -->
-                      </div> 
+            <button type="button" class="btn btn-default btn-sm" id="loginBtn">
+                <i class="glyphicon glyphicon-log-in"></i> Đăng nhập
+            </button>
+            <div class="logo"></div>
             <!-- Indicators -->
             <ol class="carousel-indicators">
                 <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -80,9 +78,9 @@
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <!-- <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li> -->
-                        <form class="navbar-form" action="/action_page.php">
+                        <form method="GET" class="navbar-form" action="" autocomplete="off">
                             <div class="input-group">
-                                <input type="text" class="form-control" placeholder="Search" name="search">
+                                <input type="text" class="form-control" placeholder="Tìm kiếm..." name="search" size="40">
                                 <div class="input-group-btn">
                                     <button class="btn btn-default" type="submit">
                                         <i class="glyphicon glyphicon-search"></i>
@@ -90,8 +88,6 @@
                                 </div>
                             </div>
                         </form>
-
-                        <!-- <li><a href="javascript:;"><span class="glyphicon glyphicon-log-in"></span> Login</a></li> -->
                         <!-- End form -->
                     </ul>
                 </div>
@@ -101,16 +97,377 @@
     <!-- End of navigation bar -->
     <!-- End of header -->
     <div class="container">
-        <div class="main">
-            This is main
+        <div class="col-sm-12 main">
+            <div class="row">
+                <h2>Sản phẩm</h2>
+                <hr>
+                <div class="productView">
+                    <div class="productItem">
+                        <a href="javascript;:" data-toggle="modal" data-target="#myModal-x">
+                            <!-- Click for toggle modal display product detail-->
+                            <div class="row productImage">
+                                <img src="http://via.placeholder.com/250x250" alt="/Product Image/">
+                            </div>
+                            <div class="row">
+                                <div class="productName">
+                                    Sony CyberShot DSC H300 (Đen)
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="productPrice">
+                                    $90
+                                </div>
+                            </div>
+                        </a>
+                        <!-- Modal for product Details -->
+                        <div id="myModal-x" class="modal fade" role="dialog">
+                            <div class="modal-dialog">
+                                <!-- Modal content-->
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        <h4 class="modal-title">Thông tin sản phẩm</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="container-fluid">
+                                            <div class="col-sm-6">
+                                                <div class="row productImage">
+                                                    <img src="http://via.placeholder.com/250x250" alt="/Product Image/">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6 productDetail">
+                                                <h3>
+                                                    <b>Sony CyberShot DSC H300 (Đen)</b>
+                                                </h3>
+                                                <br>
+                                                <div>Mã sản phẩm:
+                                                    <b>#123</b>
+                                                </div>
+                                                <div>Nhà cung cấp:
+                                                    <b>#123</b>
+                                                </div>
+                                                <br>
+                                                <div>Số lượng:
+                                                    <b>10</b>
+                                                </div>
+                                                <br>
+                                                <h4>Giá:
+                                                    <b style="color:red">$90</b>
+                                                </h4>
+                                            </div>
+                                        </div>
+                                        <!-- </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                    </div> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End of modal -->
+                    </div>
+                    <!-- End of productItem -->
+                    <div class="productItem">
+                        <a href="javascript;:" data-toggle="modal" data-target="#myModal-x">
+                            <!-- Click for toggle modal display product detail-->
+                            <div class="row productImage">
+                                <img src="http://via.placeholder.com/250x250" alt="/Product Image/">
+                            </div>
+                            <div class="row">
+                                <div class="productName">
+                                    Canon EOS D90
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="productPrice">
+                                    $90
+                                </div>
+                            </div>
+                        </a>
+                        <!-- Modal for product Details -->
+                        <div id="myModal-x" class="modal fade" role="dialog">
+                            <div class="modal-dialog">
+                                <!-- Modal content-->
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        <h4 class="modal-title">Thông tin sản phẩm</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="container-fluid">
+                                            <div class="col-sm-6">
+                                                <div class="row productImage">
+                                                    <img src="http://via.placeholder.com/250x250" alt="/Product Image/">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6 productDetail">
+                                                <h3>
+                                                    <b>Canon EOS D90</b>
+                                                </h3>
+                                                <br>
+                                                <div>Mã sản phẩm:
+                                                    <b>#123</b>
+                                                </div>
+                                                <div>Nhà cung cấp:
+                                                    <b>#123</b>
+                                                </div>
+                                                <br>
+                                                <div>Số lượng:
+                                                    <b>10</b>
+                                                </div>
+                                                <br>
+                                                <h4>Giá:
+                                                    <b style="color:red">$90</b>
+                                                </h4>
+                                            </div>
+                                        </div>
+                                        <!-- </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                    </div> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End of modal -->
+                    </div>
+                    <div class="productItem">
+                        <a href="javascript;:" data-toggle="modal" data-target="#myModal-x">
+                            <!-- Click for toggle modal display product detail-->
+                            <div class="row productImage">
+                                <img src="http://via.placeholder.com/250x250" alt="/Product Image/">
+                            </div>
+                            <div class="row">
+                                <div class="productName">
+                                    Canon EOS D90
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="productPrice">
+                                    $90
+                                </div>
+                            </div>
+                        </a>
+                        <!-- Modal for product Details -->
+                        <div id="myModal-x" class="modal fade" role="dialog">
+                            <div class="modal-dialog">
+                                <!-- Modal content-->
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        <h4 class="modal-title">Thông tin sản phẩm</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="container-fluid">
+                                            <div class="col-sm-6">
+                                                <div class="row productImage">
+                                                    <img src="http://via.placeholder.com/250x250" alt="/Product Image/">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6 productDetail">
+                                                <h3>
+                                                    <b>Canon EOS D90</b>
+                                                </h3>
+                                                <br>
+                                                <div>Mã sản phẩm:
+                                                    <b>#123</b>
+                                                </div>
+                                                <div>Nhà cung cấp:
+                                                    <b>#123</b>
+                                                </div>
+                                                <br>
+                                                <div>Số lượng:
+                                                    <b>10</b>
+                                                </div>
+                                                <br>
+                                                <h4>Giá:
+                                                    <b style="color:red">$90</b>
+                                                </h4>
+                                            </div>
+                                        </div>
+                                        <!-- </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                    </div> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End of modal -->
+                    </div>
+                    <div class="productItem">
+                        <a href="javascript;:" data-toggle="modal" data-target="#myModal-x">
+                            <!-- Click for toggle modal display product detail-->
+                            <div class="row productImage">
+                                <img src="http://via.placeholder.com/250x250" alt="/Product Image/">
+                            </div>
+                            <div class="row">
+                                <div class="productName">
+                                    Canon EOS D90
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="productPrice">
+                                    $90
+                                </div>
+                            </div>
+                        </a>
+                        <!-- Modal for product Details -->
+                        <div id="myModal-x" class="modal fade" role="dialog">
+                            <div class="modal-dialog">
+                                <!-- Modal content-->
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        <h4 class="modal-title">Thông tin sản phẩm</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="container-fluid">
+                                            <div class="col-sm-6">
+                                                <div class="row productImage">
+                                                    <img src="http://via.placeholder.com/250x250" alt="/Product Image/">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6 productDetail">
+                                                <h3>
+                                                    <b>Canon EOS D90</b>
+                                                </h3>
+                                                <br>
+                                                <div>Mã sản phẩm:
+                                                    <b>#123</b>
+                                                </div>
+                                                <div>Nhà cung cấp:
+                                                    <b>#123</b>
+                                                </div>
+                                                <br>
+                                                <div>Số lượng:
+                                                    <b>10</b>
+                                                </div>
+                                                <br>
+                                                <h4>Giá:
+                                                    <b style="color:red">$90</b>
+                                                </h4>
+                                            </div>
+                                        </div>
+                                        <!-- </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                    </div> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End of modal -->
+                    </div>
+                    <div class="productItem">
+                        <a href="javascript;:" data-toggle="modal" data-target="#myModal-x">
+                            <!-- Click for toggle modal display product detail-->
+                            <div class="row productImage">
+                                <img src="http://via.placeholder.com/250x250" alt="/Product Image/">
+                            </div>
+                            <div class="row">
+                                <div class="productName">
+                                    Canon EOS D90
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="productPrice">
+                                    $90
+                                </div>
+                            </div>
+                        </a>
+                        <!-- Modal for product Details -->
+                        <div id="myModal-x" class="modal fade" role="dialog">
+                            <div class="modal-dialog">
+                                <!-- Modal content-->
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        <h4 class="modal-title">Thông tin sản phẩm</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="container-fluid">
+                                            <div class="col-sm-6">
+                                                <div class="row productImage">
+                                                    <img src="http://via.placeholder.com/250x250" alt="/Product Image/">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6 productDetail">
+                                                <h3>
+                                                    <b>Canon EOS D90</b>
+                                                </h3>
+                                                <br>
+                                                <div>Mã sản phẩm:
+                                                    <b>#123</b>
+                                                </div>
+                                                <div>Nhà cung cấp:
+                                                    <b>#123</b>
+                                                </div>
+                                                <br>
+                                                <div>Số lượng:
+                                                    <b>10</b>
+                                                </div>
+                                                <br>
+                                                <h4>Giá:
+                                                    <b style="color:red">$90</b>
+                                                </h4>
+                                            </div>
+                                        </div>
+                                        <!-- </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                    </div> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End of modal -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pagination  -->
+            <div class="fixed-table-pagination">
+                <div class="pull-right pagination">
+                    <ul class="pagination">
+                        <li class="page-first disabled">
+                            <a href="javascript:void(0)">&lt;&lt;</a>
+                        </li>
+                        <li class="page-pre disabled">
+                            <a href="javascript:void(0)">&lt;</a>
+                        </li>
+                        <li class="page-number active disabled">
+                            <a href="javascript:void(0)">1</a>
+                        </li>
+                        <li class="page-number">
+                            <a href="javascript:void(0)">2</a>
+                        </li>
+                        <li class="page-number">
+                            <a href="javascript:void(0)">3</a>
+                        </li>
+                        <li class="page-next">
+                            <a href="javascript:void(0)">&gt;</a>
+                        </li>
+                        <li class="page-last">
+                            <a href="javascript:void(0)">&gt;&gt;</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- End of pagination -->
         </div>
+        <!-- End of main -->
     </div>
+    <!-- End of container -->
     <div class="footer container">
-        This is footer
+        <div> Copyright &COPY; DC Team 2018 </div>
     </div>
 </body>
 <script src="./assets/vendor/js/jquery-1.11.1.min.js"></script>
 <script src="./assets/vendor/js/bootstrap.min.js"></script>
 <script src="./assets/js/index.js"></script>
+<script>
+    // $('#myModal-x').modal('show'); //For testing
+</script>
 
 </html>

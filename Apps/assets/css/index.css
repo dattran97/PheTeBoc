@@ -1,49 +1,135 @@
+.main {
+    background-color: #ffffff;
+}
 
-.main{
-    background-color: #e6d5d5;
-    height: 1000px;
+.main .row {
+    padding: 0 15px 15px 15px;
 }
-.footer{
-    background-color: bisque;
+
+#myCarousel img {
+    height: 500px;
+    margin: auto;
 }
-#myCarousel img{
-    height:500px;
-    margin:auto;
-}
-body{
+
+body {
     background-color: dimgray;
-    padding-top:0;
+    padding-top: 0;
     overflow-y: scroll;
 }
+
 /* header */
 
 /* navbar */
-.navbar input{
-    border:0;
+
+.navbar input {
+    border: 0;
     background-color: white;
-    color:black;
 }
+
 .navbar {
     overflow: hidden;
-    margin-bottom:0;
+    margin-bottom: 5px;
 }
+
 .navbar .input-group {
     transform: translateX(-2%);
     float: right;
 }
-#loginBtn{
-    display:  block;
-    position:  absolute;
+
+.navbar input.form-control:focus {
+    background-color: cornsilk;
+    color: black;
+    outline: 2px solid blue;
+}
+
+.navbar input.form-control {
+    color: black;
+}
+
+#loginBtn {
+    display: block;
+    position: absolute;
     z-index: 10;
     right: 0;
 }
-.logo{
+
+.logo {
     display: block;
-    position:  absolute;
+    position: absolute;
     z-index: 1;
-    min-height:  250px;
-    min-width: 400px;
+    min-height: 200px;
+    min-width: 335px;
     margin: 10px 0 0 10px;
     background-image: url('../imgs/LogoMakr_9XA8pl.png');
     background-size: cover;
+}
+
+/*  */
+
+.productView {
+    border: 2px solid grey;
+    /* min-height: 700px; */
+    height:700px;
+    padding-bottom: 20px;
+    padding-right:20px;
+}
+
+.productItem {
+    width: 250px;
+    height: 350px;
+    background-color: rgb(255, 255, 255);
+    float: left;
+    margin: 20px 0 0 20px;
+    /*! outline: 1px solid rgb(211, 211, 211); */
+}
+
+.productItem:hover {
+    -webkit-box-shadow: 0px 0px 17px 3px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 0px 17px 3px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 0px 17px 3px rgba(0, 0, 0, 0.75);
+}
+
+/* .productItem img{
+    padding-top:5px;
+} */
+
+.productItem>a {
+    text-decoration: none;
+    color: black;
+}
+
+.productName,
+.productPrice {
+    padding: 0 5px;
+}
+
+.productItem>a:hover .productName {
+    color: salmon;
+}
+
+.productPrice {
+    color: red;
+}
+
+.productDetail {
+    padding: 0 30px;
+}
+
+/* footer */
+.footer>div{
+    background-color: #313333;
+    color:wheat;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding:0 10px;
+    /* margin-top:5px; */
+    height:50px;
+}
+
+/* Pager */
+.fixed-table-pagination .pagination {
+    margin-top: 0px;
+    margin-bottom: 5px;
 }
