@@ -6,16 +6,16 @@ let userPath = PROJECT_DIR + '/Data/NhanVien.xml';
 let cameraPath = PROJECT_DIR + '/Data/MayAnh.xml';
 
 let getListUser = () => {
-    var data = JSON.parse(parser.toJson(fs.readFileSync(userPath, 'utf-8')));
-    return data.DanhSachNhanVien.NhanVien
+    var data = fs.readFileSync(userPath, 'utf-8');
+    return data
 }
 
-let getListCamera = () => {
+let getListProduct = () => {
     var data = fs.readFileSync(cameraPath, 'utf-8');
     return data
 }
 
 module.exports = {
     getListUser,
-    getListCamera
+    getListProduct
 }
