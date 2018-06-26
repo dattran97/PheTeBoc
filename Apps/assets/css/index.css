@@ -57,8 +57,8 @@ body {
     display: block;
     position: absolute;
     z-index: 1;
-    min-height: 250px;
-    min-width: 400px;
+    min-height: 200px;
+    min-width: 335px;
     margin: 10px 0 0 10px;
     background-image: url('../imgs/LogoMakr_9XA8pl.png');
     background-size: cover;
@@ -78,7 +78,7 @@ body {
     background-color: rgb(255, 255, 255);
     float: left;
     margin: 20px 0 0 20px;
-    outline: 1px solid rgb(211, 211, 211);
+    /*! outline: 1px solid rgb(211, 211, 211); */
 }
 
 .productItem:hover {

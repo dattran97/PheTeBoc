@@ -44,8 +44,8 @@ $(document).ready(function () {
         var viewHeight = maxItemPerCol * (parseInt($firstItem.css('height'),10) + parseInt($firstItem.css('margin-top'),10));
         $productView.css('height',viewHeight + parseInt($productView.css('padding-bottom'),10));
     }
-    hanldWindowSizing();
-    $(window).on('resize',function(){
+    hanldWindowSizing(); //Called when load page with random width
+    $(window).on('resize',function(){ //listenner for resizing event
         hanldWindowSizing();
     })
 });
