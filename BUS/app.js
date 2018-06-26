@@ -31,13 +31,13 @@ app.createServer((req, res) => {
             switch (req.url) {
                 case '/users':
                     res.writeHead(200, {
-                        'Content-Type': 'text/xml'
+                        'Content-Type': 'text/json'
                     });
                     res.end(User.list());
                     break
                 case '/products':
                     res.writeHead(200, {
-                        'Content-Type': 'text/xml'
+                        'Content-Type': 'text/json'
                     });
                     res.end(Product.list());
                     break
@@ -50,28 +50,27 @@ app.createServer((req, res) => {
             });
             switch (req.url) {
                 case '/login':
-                var options = {
-                    uri: dalURL + req.url,
-                    json: true,
-                    body: JSON.stringify(req.body),
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    }
-                }
-                request(options, (err,resp,data) => {
-                    if (!err && resp.statusCode == 200) {
-                        res.writeHeader(200, {'Content-Type': 'text/json'})
-                        console.log(resp);
-                        console.log(data);
-                        // res.write(JSON.stringify(data));
-                        res.end(data);
-                    }else{
-                        res.writeHeader(400, {'Content-Type': 'text/json'})
-                        res.write(JSON.stringify(err));
-                        res.end();
-                    }
-                });
+                // var options = {
+                //     uri: dalURL + req.url,
+                //     json: req.body,
+                //     method: 'POST',
+                //     headers: {
+                //         'Content-Type': 'application/json'
+                //     }
+                // }
+                // request(options, (err,resp,data) => {
+                //     if (!err && resp.statusCode == 200) {
+                //         res.writeHeader(200, {'Content-Type': 'text/json'})
+                //         console.log(resp);
+                //         console.log(data);
+                //         res.write(JSON.stringify(data));
+                //         res.end();
+                //     }else{
+                //         res.writeHeader(400, {'Content-Type': 'text/json'})
+                //         res.write(JSON.stringify(err));
+                //         res.end();
+                //     }
+                // });
                 break
                 default: break
             }
@@ -87,4 +86,4 @@ app.createServer((req, res) => {
     } else {
         console.log('Server is starting at port ' + config.port);
     }
-}) 
+}).on('error', function(err) { console.log(err); });

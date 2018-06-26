@@ -24,11 +24,13 @@ http.createServer(function (req, res) {
 					res.end();
 					break
 				case '/users':
-					res.writeHeader(200, {'Content-Type': 'text/xml'})
+					res.writeHeader(200, {'Content-Type': 'text/json'})
 					var data = getMethod.getListUser();
+					console.log(data);
+					// res.write(JSON.stringtify(data));
 					res.end(data);
 				case '/products':
-					res.writeHeader(200, {'Content-Type': 'text/xml'})
+					res.writeHeader(200, {'Content-Type': 'text/json'})
 					var data = getMethod.getListProduct();
 					res.end(data);
 				default: break
@@ -37,7 +39,7 @@ http.createServer(function (req, res) {
 		case 'POST':
 			body = '';
             req.on('data', chunk => {
-				console.log(chunk);
+				console.log('chunk: ' + JSON.parse(chunk));
                 body += JSON.parse(chunk);
             });
 			switch (url) {

@@ -1,4 +1,5 @@
 const app = require('http');
+const request = require('request');
 const dalPort = require('../DAL/config');
 const svURL = 'http://localhost:' + dalPort.config;
 
@@ -7,17 +8,26 @@ const productPath = svURL + '/products'
 const billPath = svURL + '/bills'
 const supplierPath = svURL + '/suppliers'
 
+const headers = {
+    'Access-Control-Allow-Origin': '*',
+    "Access-Control-Allow-Headers": 'Origin, X-Requested-With, Content-Type, Accept, Authorization',
+    'Access-Control-Allow-Headers': 'X-Requested-With',
+    "Access-Control-Allow-Methods": "GET, POST, OPTIONS, PUT, DELETE"
+};
+
 const getData = (url) => {
     return new Promise((resolve, reject) => {
         var options = {
             uri: url,
-            method: "GET"
+            method: 'GET',
+            headers: headers
         }
         request(options, (err, res, body) => {
           if (err) {
             return reject(err);
           }else{
-            return resolve(body);
+            console.log(body);
+            resolve(JSON.parse(body));   
           }
         });
     });
@@ -26,8 +36,8 @@ const getData = (url) => {
 CacheData = new class Cache {
     constructor() {
         getData(userPath).then(result => {
-            console.log(result);
-            this.userCache = result;
+            console.log(JSON.parse(data));
+            this.userCache = JSON.parse(data);
             return this.userCache;
         });
         getData(productPath).then(result => {
