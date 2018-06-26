@@ -3,11 +3,14 @@ const parser = require('xml2js');
 var getMethod = require('./getMethod')
 
 login = (user) => {
-  console.log(user);
   let { email, password } = user;
-  
+  console.log(email);
 	return new Promise((resolve, reject) => {
-    let users = getMethod.getListUser();
+    let temp = getMethod.getListUser();
+    
+    let users = JSON.parse(temp).NhanVien;
+    
+    
     let user = users.filter((user) => {
       return user.Email === email && user.Password === password;
     });

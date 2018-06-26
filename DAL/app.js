@@ -47,16 +47,14 @@ http.createServer(function (req, res) {
 			}
 			return
 		case 'POST':
-			body = '';
             req.on('data', chunk => {
-				console.log('chunk: ' + JSON.parse(chunk));
-                body += JSON.parse(chunk);
+				req.body = JSON.parse(chunk);
             });
 			switch (url) {
 				case '/login':
                     req.on('end', () => {
-						console.log(body);
-                        postMethod.login(body).then(data => {
+						console.log(req.body);
+                        postMethod.login(req.body).then(data => {
 							res.writeHeader(200, {'Content-Type': 'text/json'})
 							res.write(JSON.stringify(data));
 							res.end();

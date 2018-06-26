@@ -50,31 +50,35 @@ app.createServer((req, res) => {
             }
         case 'POST':
             req.on('data', chunk => {
-                req.body = chunk;
+                req.body = JSON.parse(chunk);
             });
             switch (req.url) {
                 case '/login':
-                // var options = {
-                //     uri: dalURL + req.url,
-                //     json: req.body,
-                //     method: 'POST',
-                //     headers: {
-                //         'Content-Type': 'application/json'
-                //     }
-                // }
-                // request(options, (err,resp,data) => {
-                //     if (!err && resp.statusCode == 200) {
-                //         res.writeHeader(200, {'Content-Type': 'text/json'})
-                //         console.log(resp);
-                //         console.log(data);
-                //         res.write(JSON.stringify(data));
-                //         res.end();
-                //     }else{
-                //         res.writeHeader(400, {'Content-Type': 'text/json'})
-                //         res.write(JSON.stringify(err));
-                //         res.end();
-                //     }
-                // });
+                req.on('end', () => {
+                    var options = {
+                        uri: dalURL + req.url,
+                        json: req.body,
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        }
+                    }
+                    request(options, (err,resp,data) => {
+                        if (!err && resp.statusCode == 200) {
+                            res.writeHead(200, {
+                                'Content-Type': 'text/json'
+                            });
+                            res.write(JSON.stringify(data));
+                            res.end();
+                        }else{
+                            res.writeHead(400, {
+                                'Content-Type': 'text/json'
+                            });
+                            res.write(JSON.stringify(err));
+                            res.end();
+                        }
+                    });
+                });
                 break
                 default: break
             }
@@ -90,4 +94,4 @@ app.createServer((req, res) => {
     } else {
         console.log('Server is starting at port ' + config.port);
     }
-}).on('error', function(err) { console.log(err); });
+})
