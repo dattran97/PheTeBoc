@@ -6,8 +6,7 @@ let userPath = PROJECT_DIR + '/Data/NhanVien.xml';
 let cameraPath = PROJECT_DIR + '/Data/MayAnh.xml';
 
 let getListUser = () => {
-    // var data = fs.readFileSync(userPath, 'utf-8');
-    let data = fs.readFileSync(userPath, 'utf-8');
+    let data = parser.toJson(fs.readFileSync(userPath, 'utf-8'));
     return data
 }
 

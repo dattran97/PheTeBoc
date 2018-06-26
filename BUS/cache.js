@@ -1,7 +1,7 @@
-const app = require('http');
+const http = require('http');
 const request = require('request');
 const dalPort = require('../DAL/config');
-const svURL = 'http://localhost:' + dalPort.config;
+const svURL = 'http://localhost:' + dalPort.port;
 
 const userPath = svURL + '/users'
 const productPath = svURL + '/products'
@@ -26,8 +26,7 @@ const getData = (url) => {
           if (err) {
             return reject(err);
           }else{
-            console.log(body);
-            resolve(JSON.parse(body));   
+            return resolve(body);   
           }
         });
     });
@@ -36,12 +35,10 @@ const getData = (url) => {
 CacheData = new class Cache {
     constructor() {
         getData(userPath).then(result => {
-            console.log(JSON.parse(data));
-            this.userCache = JSON.parse(data);
+            this.userCache = result;
             return this.userCache;
-        });
+        })
         getData(productPath).then(result => {
-            console.log(result);
             this.productCache = result;
             return this.productCache;
         });

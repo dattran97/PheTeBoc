@@ -5,7 +5,7 @@ var config = require('./config');
 var User = require('./services/user');
 var Product = require('./services/product');
 
-let dalURL = 'http://localhost:3001'
+let dalURL = 'http://localhost:3001';
 
 let sessions = [];
 

@@ -1,5 +1,5 @@
 <DanhSachNhanVien>
-    <NhanVien id="1" Email="nhanvien1@gmail.com" Password="123456" isManager="0"/>
-    <NhanVien id="2" Email="nhanvien2@gmail.com" Password="123456" isManager="0"/>
-    <NhanVien id="3" Email="quanli@gmail.com" Password="123456" isManager="1"/>
+    <NhanVien id="1" Email="nhanvien1@gmail.com" Password="123456" isManager="0"></NhanVien>
+    <NhanVien id="2" Email="nhanvien2@gmail.com" Password="123456" isManager="0"></NhanVien>
+    <NhanVien id="3" Email="quanli@gmail.com" Password="123456" isManager="1"></NhanVien>
 </DanhSachNhanVien>

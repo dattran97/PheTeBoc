@@ -26,8 +26,6 @@ http.createServer(function (req, res) {
 				case '/users':
 					res.writeHeader(200, {'Content-Type': 'text/json'})
 					var data = getMethod.getListUser();
-					console.log(data);
-					// res.write(JSON.stringtify(data));
 					res.end(data);
 				case '/products':
 					res.writeHeader(200, {'Content-Type': 'text/json'})
@@ -46,13 +44,11 @@ http.createServer(function (req, res) {
 				case '/login':
                     req.on('end', () => {
 						console.log(body);
-                        postMethod.login(body)
-                        .then(data => {
+                        postMethod.login(body).then(data => {
 							res.writeHeader(200, {'Content-Type': 'text/json'})
 							res.write(JSON.stringify(data));
 							res.end();
-                        })
-                        .catch(err => {
+                        }).catch(err => {
 							res.writeHeader(400, {'Content-Type': 'text/json'})
 							res.write(JSON.stringify(err));
 							res.end();
