@@ -154,19 +154,19 @@
         rowStyle: function (row, index) {return {};},
 
         formatLoadingMessage: function () {
-            return 'Loading, please wait…';
+            return 'Đang tải dữ liệu…';
         },
         formatRecordsPerPage: function (pageNumber) {
-            return sprintf('%s records per page', pageNumber);
+            return sprintf('%s sản phẩm/trang', pageNumber);
         },
         formatShowingRows: function (pageFrom, pageTo, totalRows) {
-            return sprintf('Showing %s to %s of %s rows', pageFrom, pageTo, totalRows);
+            return sprintf('Đang hiển thị %s - %s của %s sản phẩm ', pageFrom, pageTo, totalRows);
         },
         formatSearch: function () {
-            return 'Search';
+            return 'Tìm kiếm';
         },
         formatNoMatches: function () {
-            return 'No matching records found';
+            return 'Không tìm thấy dữ liệu';
         },
         formatRefresh: function () {
             return 'Refresh';
