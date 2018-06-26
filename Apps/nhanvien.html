@@ -1,18 +1,170 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>iCamera - Nhân viên</title>
 
-    <link rel="stylesheet" href="./assets/vendor/css/bootstrap-theme.min.css">
-    <link rel="stylesheet" href="./assets/vendor/css/bootstrap.min.css">
-    <link rel="stylesheet" href="./assets/css/styles.css">
+    <link href="./assets/vendor/css/bootstrap.min.css" rel="stylesheet">
+    <link href="./assets/vendor/css/datepicker3.css" rel="stylesheet">
+    <link href="./assets/vendor/css/bootstrap-table.css" rel="stylesheet">
+    <link href="./assets/css/styles.css" rel="stylesheet">
+
+    <!--[if lt IE 9]>
+<script src="js/html5shiv.js"></script>
+<script src="js/respond.min.js"></script>
+<![endif]-->
+
 </head>
+
 <body>
-    
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#sidebar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">
+                    <span>iCamera</span> Admin</a>
+                <ul class="user-menu">
+                    <li class="dropdown pull-right">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <span class="glyphicon glyphicon-user"></span> User
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li>
+                                <a href="#">
+                                    <span class="glyphicon glyphicon-user"></span> Profile</a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="glyphicon glyphicon-cog"></span> Settings</a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="glyphicon glyphicon-log-out"></span> Logout</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+    <div class="col-sm-12 col-sm-offset-0 col-lg-12 col-lg-offset-0 main">
+        <div class="row">
+            <ol class="breadcrumb">
+                <li>
+                    <a href="#">
+                        <span class="glyphicon glyphicon-home"></span>
+                    </a>
+                </li>
+                <li class="active">Nhân viên</li>
+            </ol>
+        </div>
+        <!--/.row-->
+
+        <div class="row">
+            <div class="col-lg-12">
+                <!-- <h1 class="page-header" id="tenNhanvien">NV Nguyen Van A</h1> -->
+                <div class="row">
+                    <!-- Thong tin nhan vien -->
+                    <div class="col-xs-12 col-md-4 col-lg-4">
+                        <div class="panel panel-teal panel-widget">
+                            <div class="row no-padding">
+                                <div class="col-sm-3 col-lg-5 widget-left">
+                                    <em class="glyphicon glyphicon-user glyphicon-l"></em>
+                                </div>
+                                <div class="col-sm-9 col-lg-7 widget-right">
+                                    <div class="large" id="tenNhanVien">An Nguyen</div>
+                                    <div class="text-muted" id="masoNV">#123456</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End of Thong tin nhan vien -->
+                    <!--  -->
+                    <div class="col-xs-12 col-md-4 col-lg-4">
+                        <div class="panel panel-blue panel-widget ">
+                            <div class="row no-padding">
+                                <div class="col-sm-3 col-lg-5 widget-left">
+                                    <em class="glyphicon glyphicon-shopping-cart glyphicon-l"></em>
+                                </div>
+                                <div class="col-sm-9 col-lg-7 widget-right">
+                                    <div class="large" id="current-month-orders">50</div>
+                                    <div class="text-muted">Đơn hàng tháng <span id="current-month">6</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-md-4 col-lg-4">
+                        <div class="panel panel-red panel-widget">
+                            <div class="row no-padding">
+                                <div class="col-sm-3 col-lg-5 widget-left">
+                                    <em class="glyphicon glyphicon-stats glyphicon-l"></em>
+                                </div>
+                                <div class="col-sm-9 col-lg-7 widget-right">
+                                    <div class="large" id="totalView">25.2k</div>
+                                    <div class="text-muted">Lượt truy cập</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--/.row-->
+
+
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">Advanced Table</div>
+                    <div class="panel-body">
+                        <table data-toggle="table" data-url="./assets/tables/data1.json" data-show-refresh="true" data-show-toggle="true" data-show-columns="true"
+                            data-search="true" data-select-item-name="toolbar1" data-pagination="true" data-sort-name="name"
+                            data-sort-order="desc">
+                            <thead>
+                                <tr>
+                                    <th data-field="state" data-checkbox="true">Item ID</th>
+                                    <th data-field="id" data-sortable="true">Item ID</th>
+                                    <th data-field="name" data-sortable="true">Item Name</th>
+                                    <th data-field="price" data-sortable="true">Item Price</th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--/.row-->
+    </div>
+    <!--/.main-->
+
+    <script src="./assets/vendor/js/jquery-1.11.1.min.js"></script>
+    <script src="./assets/vendor/js/bootstrap.min.js"></script>
+    <script src="./assets/vendor/js/bootstrap-table.js"></script>
+    <script>
+        ! function ($) {
+            $(document).on("click", "ul.nav li.parent > a > span.icon", function () {
+                $(this).find('em:first').toggleClass("glyphicon-minus");
+            });
+            $(".sidebar span.icon").find('em:first').addClass("glyphicon-plus");
+        }(window.jQuery);
+
+        $(window).on('resize', function () {
+            if ($(window).width() > 768) $('#sidebar-collapse').collapse('show')
+        })
+        $(window).on('resize', function () {
+            if ($(window).width() <= 767) $('#sidebar-collapse').collapse('hide')
+        })
+    </script>
 </body>
-<script src="./assets/vendor/js/jquery-1.11.1.min.js"></script>
-<script src="./assets/vendor/js/bootstrap.min.js"></script>
+
 </html>
