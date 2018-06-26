@@ -47,26 +47,6 @@ http.createServer(function (req, res) {
 			}
 			return
 		case 'POST':
-            req.on('data', chunk => {
-				req.body = JSON.parse(chunk);
-            });
-			switch (url) {
-				case '/login':
-                    req.on('end', () => {
-						console.log(req.body);
-                        postMethod.login(req.body).then(data => {
-							res.writeHeader(200, {'Content-Type': 'text/json'})
-							res.write(JSON.stringify(data));
-							res.end();
-                        }).catch(err => {
-							res.writeHeader(400, {'Content-Type': 'text/json'})
-							res.write(JSON.stringify(err));
-							res.end();
-                        })
-                    });
-                    break
-				default: break
-			}
 			return
 		default: break
 	}

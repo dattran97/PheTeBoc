@@ -4,13 +4,10 @@ var getMethod = require('./getMethod')
 
 login = (user) => {
   let { email, password } = user;
-  console.log(email);
-	return new Promise((resolve, reject) => {
+
+  return new Promise((resolve, reject) => {
     let temp = getMethod.getListUser();
-    
     let users = JSON.parse(temp).NhanVien;
-    
-    
     let user = users.filter((user) => {
       return user.Email === email && user.Password === password;
     });

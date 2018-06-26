@@ -9,22 +9,6 @@ var Supplier = require('./services/supplier');
 
 let dalURL = 'http://localhost:3001';
 
-let sessions = [];
-
-// function checkSession(userId) {
-//     console.log(session)
-//     let user = sessions.find((user) => user.id === userId);
-
-//     return (user != null || user != undefined) ? -1 : user.role;
-// }
-
-// function deleteSession(userId) {
-//     let user = checkSession(userId);
-//     if (user !== -1) {
-//         sessions.splice(user, 1);
-//     }
-// }
-
 app.createServer((req, res) => {
     res.setHeader("Access-Control-Allow-Origin", "*");
     console.log(`${req.method} ${req.url}`);
@@ -55,29 +39,26 @@ app.createServer((req, res) => {
             switch (req.url) {
                 case '/login':
                 req.on('end', () => {
-                    var options = {
-                        uri: dalURL + req.url,
-                        json: req.body,
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json'
-                        }
-                    }
-                    request(options, (err,resp,data) => {
-                        if (!err && resp.statusCode == 200) {
-                            res.writeHead(200, {
-                                'Content-Type': 'text/json'
-                            });
-                            res.write(JSON.stringify(data));
-                            res.end();
-                        }else{
-                            res.writeHead(400, {
-                                'Content-Type': 'text/json'
-                            });
-                            res.write(JSON.stringify(err));
-                            res.end();
-                        }
-                    });
+                    console.log(req.body);
+                    User.login(req.body).then(data => {
+                        res.writeHeader(200, {'Content-Type': 'text/json'})
+                        res.write(JSON.stringify(data));
+                        res.end();
+                    }).catch(err => {
+                        res.writeHeader(400, {'Content-Type': 'text/json'})
+                        res.write(JSON.stringify(err));
+                        res.end();
+                    })
+                });
+                break
+                case '/logout':
+                req.on('end', () => {
+                    let token = req.headers.acccesstoken;
+                    console.log(token);
+                    User.logout(token);
+                    res.writeHeader(200, {'Content-Type': 'text/json'})
+                    res.write(JSON.stringify({'message': 'Logout successfuly'}));
+                    res.end();
                 });
                 break
                 default: break
