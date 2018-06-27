@@ -1,7 +1,7 @@
 const app = require('http');
 const url = require('url');
-const request = require('request');
 var config = require('./config');
+
 var User = require('./services/user');
 var Product = require('./services/product');
 var Bill = require('./services/bill');
@@ -17,12 +17,32 @@ app.createServer((req, res) => {
             res.writeHead(200, {
                 'Content-Type': 'text/json'
             });
-            switch (req.url) {
+            const { pathname, query } = url.parse(req.url, true);
+            console.log(pathname);
+            console.log(query);
+            switch (pathname) {
                 case '/users':
                     res.end(User.list());
                     break
                 case '/products':
-                    res.end(Product.list());
+                    // var url_parts = url.parse(req.url, true);
+                    // var query = url_parts.query;
+                    let supId = query.supplierId;
+                    console.log(supId);
+                    if (supId == undefined || supId == ''){
+                        res.end(Product.list());
+                    }else{
+                        Product.listBySupplier(supId).then(data => {
+                            // res.writeHeader(200, {'Content-Type': 'text/json'})
+                            res.write(JSON.stringify(data));
+                            res.end();
+                        }).catch(err => {
+                            // res.writeHeader(400, {'Content-Type': 'text/json'})
+                            // res.write(JSON.stringify(err));
+                            // res.end();
+                        })
+                    }
+                    // res.end();
                     break
                 case '/bills':
                     res.end(Bill.list());
