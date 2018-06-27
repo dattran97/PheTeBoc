@@ -12,6 +12,30 @@ class Bill {
         return cacheData.getListBill();
     }
 
+    //POST - /addBill
+    add(params) {
+        return new Promise((resolve, reject) => {
+            //Gọi API
+            var options = {
+                uri: svURL + '/addBill',
+                json: params,
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            }
+            console.log(options);
+            request(options, (err, res, body) => {
+                if (err) {
+                    return reject(err);
+                }else{
+                    cacheData.updateListBill(JSON.stringify(body));
+                    return resolve(body);
+                }
+            });
+        });
+    }
+
 }
 
 module.exports = new Bill();

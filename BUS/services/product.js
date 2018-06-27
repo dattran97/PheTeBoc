@@ -46,7 +46,7 @@ class Product {
                 if (err) {
                     return reject(err);
                 }else{
-                    // cacheData.updateListUser(JSON.stringify(body));
+                    cacheData.updateListProduct(JSON.stringify(body));
                     return resolve(body);
                 }
             });

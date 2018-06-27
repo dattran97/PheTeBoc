@@ -70,6 +70,10 @@ CacheData = new class Cache {
         }
     }
 
+    updateListProduct(list) {
+        this.productCache = list;
+    }
+
     getListBill() {
         if (this.billCache == "" || this.billCache == undefined) {
             get(billPath).then(result => {
@@ -79,6 +83,10 @@ CacheData = new class Cache {
         }else {
             return this.billCache;
         }
+    }
+
+    updateListBill(list) {
+        this.billCache = list;
     }
 
     getListSupplier() {
