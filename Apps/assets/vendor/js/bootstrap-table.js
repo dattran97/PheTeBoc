@@ -590,7 +590,7 @@
             html = [];
             html.push(
                 '<div class="pull-right search">',
-                    sprintf('<input class="form-control" type="text" placeholder="%s">',
+                    sprintf('<input class="form-control" type="text" placeholder="%s" size="35">',
                         this.options.formatSearch()),
                 '</div>');
 
