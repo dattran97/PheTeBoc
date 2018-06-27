@@ -60,6 +60,99 @@
 			"response": []
 		},
 		{
+			"name": "Add Product",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "accessToken",
+						"value": "FEMFKWMfekmfwfmsMDKEmkfe"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"SAMSUNG EOS 3000D KIT 18-55 DC III\",\n  \"price\": \"25510000\",\n  \"imgUrl\": \"21.png\",\n  \"supId\": 3,\n  \"amount\": 50\n}"
+				},
+				"url": {
+					"raw": "localhost:3002/addProduct",
+					"host": [
+						"localhost"
+					],
+					"port": "3002",
+					"path": [
+						"addProduct"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Bill",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "accessToken",
+						"value": "FEMFKWMfekmfwfmsMDKEmkfe"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"date\": \"26/06/2018\",\n  \"billTotal\": \"25510000\",\n  \"cart\": [\n  \t{\n\t\t\"id\":1,\n\t\t\"name\": \"May Anh Canon EOS 750D Kit EF S18-55 IS STM \",\n\t\t\"price\": 12490000,\n\t\t\"amount\": 2,\n\t\t\"total\": 24980000\n\t },\n\t {\n\t\t\"id\":2,\n\t\t\"name\": \"May Anh Sony CyberShot DSC H300 (Den)\",\n\t\t\"price\": 3450000,\n\t\t\"amount\": 1,\n\t\t\"total\": 3450000\n\t }\n  ]\n}"
+				},
+				"url": {
+					"raw": "localhost:3002/addBill",
+					"host": [
+						"localhost"
+					],
+					"port": "3002",
+					"path": [
+						"addBill"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Supplier",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "accessToken",
+						"value": "FEMFKWMfekmfwfmsMDKEmkfe"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"date\": \"26/06/2018\",\n  \"billTotal\": \"25510000\",\n  \"cart\": [\n  \t{\n\t\t\"id\":1,\n\t\t\"name\": \"May Anh Canon EOS 750D Kit EF S18-55 IS STM \",\n\t\t\"price\": 12490000,\n\t\t\"amount\": 2,\n\t\t\"total\": 24980000\n\t },\n\t {\n\t\t\"id\":2,\n\t\t\"name\": \"May Anh Sony CyberShot DSC H300 (Den)\",\n\t\t\"price\": 3450000,\n\t\t\"amount\": 1,\n\t\t\"total\": 3450000\n\t }\n  ]\n}"
+				},
+				"url": {
+					"raw": "localhost:3002/addBill",
+					"host": [
+						"localhost"
+					],
+					"port": "3002",
+					"path": [
+						"addBill"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "Get danh sách nhà cung cấp",
 			"request": {
 				"method": "GET",
