@@ -3,7 +3,6 @@ const url = require('url');
 var config = require('./config');
 
 var cache = require('./cache');
-var cacheData = cache.CacheData;
 
 var User = require('./services/user');
 var Product = require('./services/product');
@@ -77,6 +76,20 @@ app.createServer((req, res) => {
                     User.register(req.body).then(data => {
                         res.writeHeader(200, {'Content-Type': 'text/json'})
                         res.write(JSON.stringify({'message': 'Register successfully'}));
+                        res.end();
+                    }).catch(err => {
+                        res.writeHeader(400, {'Content-Type': 'text/json'})
+                        res.write(JSON.stringify(err));
+                        res.end();
+                    })
+                });
+                break
+                case '/addProduct':
+                req.on('end', () => {
+                    console.log(req.body);
+                    Product.add(req.body).then(data => {
+                        res.writeHeader(200, {'Content-Type': 'text/json'})
+                        res.write(JSON.stringify(data));
                         res.end();
                     }).catch(err => {
                         res.writeHeader(400, {'Content-Type': 'text/json'})

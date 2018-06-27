@@ -31,6 +31,32 @@ let register = (params) => {
     });
 };
 
+let addProduct = (params) => {
+    return new Promise((resolve, reject) => {
+        var prods = fs.readFileSync(cameraPath, 'UTF-8')
+        console.log(prods)
+        let list = JSON.parse(parser.toJson(prods)).DanhSachMayAnh.MayAnh;
+        let lastId = parseInt(list[list.length - 1].id);
+        var pos = prods.lastIndexOf("</DanhSachMayAnh>")
+        console.log(pos);
+        var xml = `\t<MayAnh id='${lastId + 1}' Ten='${params.name}' DonGia='${params.price}' HinhAnh='${params.imgUrl}' MaNCC='${params.supId}' SoLuongTon='${params.amount}' SoLuongBan='0'></MayAnh>\n</DanhSachMayAnh>`;
+        console.log(xml);
+        fs.open(cameraPath, "r+", function(error, fd) {
+            if(error){
+                reject({'error': error.message});
+            }else{
+                console.log("Ghi product");
+                fs.writeSync(fd, xml, pos, "utf8");
+                fs.close(fd); 
+                let newData = getMethod.getListProduct()
+                console.log(newData);
+                resolve(newData);
+            }
+        });
+    });
+};
+
 module.exports = {
-    register
+    register,
+    addProduct
 }
