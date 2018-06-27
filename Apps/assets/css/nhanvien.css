@@ -25,3 +25,14 @@
 .panel-default{
     margin-bottom: 0;
 }
+.borderless {
+    border-top-style: none;
+    border-left-style: none;
+    border-right-style: none;
+    border-bottom-style: none;
+}
+
+
+#sel-prod {
+    margin-left: 15px;
+  }
