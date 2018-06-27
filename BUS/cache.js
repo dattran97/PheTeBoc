@@ -8,7 +8,7 @@ const productPath = svURL + '/products'
 const billPath = svURL + '/bills'
 const supplierPath = svURL + '/suppliers'
 
-const getData = (url) => {
+const get = (url) => {
     return new Promise((resolve, reject) => {
         var options = {
             uri: url,
@@ -26,19 +26,19 @@ const getData = (url) => {
 
 CacheData = new class Cache {
     constructor() {
-        getData(userPath).then(result => {
+        get(userPath).then(result => {
             this.userCache = result;
             return this.userCache;
         })
-        getData(productPath).then(result => {
+        get(productPath).then(result => {
             this.productCache = result;
             return this.productCache;
         });
-        getData(billPath).then(result => {
+        get(billPath).then(result => {
             this.billCache = result;
             return this.billCache;
         });
-        getData(supplierPath).then(result => {
+        get(supplierPath).then(result => {
             this.supplierCache = result;
             return this.supplierCache;
         });
@@ -46,7 +46,7 @@ CacheData = new class Cache {
 
     getListUser() {
         if (this.userCache == "" || this.userCache == undefined) {
-            getData(userPath).then(result => {
+            get(userPath).then(result => {
                 this.userCache = result;
                 return this.userCache;
             })
@@ -55,9 +55,13 @@ CacheData = new class Cache {
         }
     }
 
+    updateListUser(list) {
+        this.userCache = list;
+    }
+
     getListProduct() {
         if (this.productCache == "" || this.productCache == undefined) {
-            getData(productPath).then(result => {
+            get(productPath).then(result => {
                 this.productCache = result;
                 return this.productCache;
             })
@@ -68,7 +72,7 @@ CacheData = new class Cache {
 
     getListBill() {
         if (this.billCache == "" || this.billCache == undefined) {
-            getData(billPath).then(result => {
+            get(billPath).then(result => {
                 this.billCache = result;
                 return this.billCache;
             })
@@ -79,7 +83,7 @@ CacheData = new class Cache {
 
     getListSupplier() {
         if (this.supplierCache == "" || this.supplierCache == undefined) {
-            getData(supplierPath).then(result => {
+            get(supplierPath).then(result => {
                 this.supplierCache = result;
                 return this.supplierCache;
             })

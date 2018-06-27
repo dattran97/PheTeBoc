@@ -1,6 +1,8 @@
+const request = require('request');
 var cache = require('../cache');
 var cacheData = cache.CacheData;
 
+let svURL = 'http://localhost:3001';
 var sessions = [];
 
 class User {
@@ -42,7 +44,29 @@ class User {
     }
 
     //POST - /register
-    register() {}
+    register(params) {
+        return new Promise((resolve, reject) => {
+            //Kiểm tra email đã tồn tại chưa
+
+            //Gọi API register
+            var options = {
+                uri: svURL + '/register',
+                json: params,
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            }
+            request(options, (err, res, body) => {
+                if (err) {
+                    return reject(err);
+                }else{
+                    cacheData.updateListUser(JSON.stringify(body));
+                    return resolve({'message': 'Register successfully'});
+                }
+            });
+        });
+    }
 
     //Support functions
     generateUserToken() {

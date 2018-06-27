@@ -2,6 +2,9 @@ const app = require('http');
 const url = require('url');
 var config = require('./config');
 
+var cache = require('./cache');
+var cacheData = cache.CacheData;
+
 var User = require('./services/user');
 var Product = require('./services/product');
 var Bill = require('./services/bill');
@@ -11,7 +14,6 @@ let dalURL = 'http://localhost:3001';
 
 app.createServer((req, res) => {
     res.setHeader("Access-Control-Allow-Origin", "*");
-    console.log(`${req.method} ${req.url}`);
     switch (req.method) {
         case 'GET':
             res.writeHead(200, {
@@ -33,13 +35,12 @@ app.createServer((req, res) => {
                         res.end(Product.list());
                     }else{
                         Product.listBySupplier(supId).then(data => {
-                            // res.writeHeader(200, {'Content-Type': 'text/json'})
+                            var data = {};
                             res.write(JSON.stringify(data));
                             res.end();
                         }).catch(err => {
-                            // res.writeHeader(400, {'Content-Type': 'text/json'})
-                            // res.write(JSON.stringify(err));
-                            // res.end();
+                            res.write(JSON.stringify(err));
+                            res.end();
                         })
                     }
                     // res.end();
@@ -71,13 +72,26 @@ app.createServer((req, res) => {
                     })
                 });
                 break
+                case '/register':
+                req.on('end', () => {
+                    User.register(req.body).then(data => {
+                        res.writeHeader(200, {'Content-Type': 'text/json'})
+                        res.write(JSON.stringify({'message': 'Register successfully'}));
+                        res.end();
+                    }).catch(err => {
+                        res.writeHeader(400, {'Content-Type': 'text/json'})
+                        res.write(JSON.stringify(err));
+                        res.end();
+                    })
+                });
+                break
                 case '/logout':
                 req.on('end', () => {
                     let token = req.headers.acccesstoken;
                     console.log(token);
                     User.logout(token);
                     res.writeHeader(200, {'Content-Type': 'text/json'})
-                    res.write(JSON.stringify({'message': 'Logout successfuly'}));
+                    res.write(JSON.stringify({'message': 'Logout successfully'}));
                     res.end();
                 });
                 break
