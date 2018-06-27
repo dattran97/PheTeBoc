@@ -59,26 +59,47 @@ let addProduct = (params) => {
 
 let addBill = (params) => {
     return new Promise((resolve, reject) => {
-        var bills = fs.readFileSync(billPath, 'UTF-8')
-        console.log(bills)
+        var sups = fs.readFileSync(supplierPath, 'UTF-8')
+        console.log(sups)
         let list = JSON.parse(parser.toJson(bills)).DanhSachDonHang.DonHang;
         let lastId = parseInt(list[list.length - 1].id);
-        var pos = bills.lastIndexOf("</DanhSachDonHang>")
+        var pos = sups.lastIndexOf("</DanhSachDonHang>")
         console.log(pos);
         var xml = `\t<DonHang id="${lastId + 1}" Ngay="${params.date}" TongTien="${params.billTotal}">\n\t\t<GioHang>\n`;
-        for (let i = 0; i < params.cart.length; i++) {
-            xml += `\t\t\t<MayAnh id='${params.cart[i].id}' Ten='${params.cart[i].name}' DonGia='${params.cart[i].price}' SoLuong='${params.cart[i].amount}' Tong='${params.cart[i].total}' />\n`;
-        }
-        xml += "\t\t</GioHang>\n\t</DonHang>\n</DanhSachDonHang>";
         console.log(xml);
-        fs.open(billPath, "r+", function(error, fd) {
+        fs.open(supplierPath, "r+", function(error, fd) {
             if(error){
                 reject({'error': error.message});
             }else{
-                console.log("Ghi Bill");
+                console.log("Ghi Supplier");
                 fs.writeSync(fd, xml, pos, "utf8");
                 fs.close(fd); 
-                let newData = getMethod.getListBill()
+                let newData = getMethod.getListSupplier()
+                console.log(newData);
+                resolve(newData);
+            }
+        });
+    });
+};
+
+let addSupplier = (params) => {
+    return new Promise((resolve, reject) => {
+        var sups = fs.readFileSync(supplierPath, 'UTF-8')
+        console.log(sups)
+        let list = JSON.parse(parser.toJson(sups)).DanhSachNhaCungCap.NhaCungCap;
+        let lastId = parseInt(list[list.length - 1].id);
+        var pos = sups.lastIndexOf("</DanhSachNhaCungCap>")
+        console.log(pos);
+        var xml = `\t<NhaCungCap id='${lastId + 1}' Ten='${params.name}' DiaChi='${params.address}' SoDienThoai='${params.phone}'></NhaCungCap>\n</DanhSachNhaCungCap>`;
+        console.log(xml);
+        fs.open(supplierPath, "r+", function(error, fd) {
+            if(error){
+                reject({'error': error.message});
+            }else{
+                console.log("Ghi Product");
+                fs.writeSync(fd, xml, pos, "utf8");
+                fs.close(fd); 
+                let newData = getMethod.getListSupplier()
                 console.log(newData);
                 resolve(newData);
             }
@@ -89,5 +110,6 @@ let addBill = (params) => {
 module.exports = {
     register,
     addProduct,
-    addBill
+    addBill,
+    addSupplier
 }

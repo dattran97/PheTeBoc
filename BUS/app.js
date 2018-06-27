@@ -108,6 +108,20 @@ app.createServer((req, res) => {
                     })
                 });
                 break
+                case '/addSupplier':
+                req.on('end', () => {
+                    console.log(req.body)
+                    Supplier.add(req.body).then(data => {
+                        res.writeHeader(200, {'Content-Type': 'text/json'})
+                        res.write(JSON.stringify(data));
+                        res.end();
+                    }).catch(err => {
+                        res.writeHeader(400, {'Content-Type': 'text/json'})
+                        res.write(JSON.stringify(err));
+                        res.end();
+                    })
+                });
+                break
                 case '/logout':
                 req.on('end', () => {
                     let token = req.headers.acccesstoken;

@@ -99,6 +99,10 @@ CacheData = new class Cache {
             return this.supplierCache;
         }
     }
+
+    updateListSupplier(list) {
+        this.supplierCache = list;
+    }
 }
 
 module.exports = {

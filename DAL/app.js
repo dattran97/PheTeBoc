@@ -88,6 +88,19 @@ http.createServer(function (req, res) {
                     })
 				});
 				break
+				case '/addSupplier':
+				req.on('end', () => {
+					console.log(req.body);
+					postMethod.addSupplier(req.body).then(data => {
+                        res.writeHeader(200, {'Content-Type': 'text/json'})
+                        res.end(data);
+                    }).catch(err => {
+                        res.writeHeader(400, {'Content-Type': 'text/json'})
+                        res.write(JSON.stringify(err));
+                        res.end();
+                    })
+				});
+				break
 				default: break
 			}
 		default: break

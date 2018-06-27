@@ -17,7 +17,7 @@
             <MayAnh id='2' Ten='May Anh Sony CyberShot DSC H300 (Den)' DonGia='3450000' SoLuong='1' Tong='3450000' />
         </GioHang>
     </DonHang>
-	<DonHang id="4" Ngay="26/06/2018" TongTien="undefined">
+	<DonHang id="4" Ngay="26/06/2018" TongTien="28430000">
 		<GioHang>
 			<MayAnh id='1' Ten='May Anh Sony CyberShot DSC H300 (Den)' DonGia='3450000' SoLuong='1' Tong='3450000' />
 		</GioHang>
@@ -26,6 +26,12 @@
 		<GioHang>
 			<MayAnh id='1' Ten='May Anh Sony CyberShot DSC H300 (Den)' DonGia='3450000' SoLuong='1' Tong='3450000' />
 			<MayAnh id='1' Ten='May Anh Sony CyberShot DSC H300 (Den)' DonGia='3450000' SoLuong='1' Tong='3450000' />
+		</GioHang>
+	</DonHang>
+	<DonHang id="6" Ngay="26/06/2018" TongTien="25510000">
+		<GioHang>
+			<MayAnh id='1' Ten='May Anh Canon EOS 750D Kit EF S18-55 IS STM ' DonGia='12490000' SoLuong='2' Tong='24980000' />
+			<MayAnh id='2' Ten='May Anh Sony CyberShot DSC H300 (Den)' DonGia='3450000' SoLuong='1' Tong='3450000' />
 		</GioHang>
 	</DonHang>
 </DanhSachDonHang>
