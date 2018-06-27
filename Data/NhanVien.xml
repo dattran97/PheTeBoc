@@ -1,2 +1,19 @@
 <DanhSachNhanVien>
+    <NhanVien id="1" Email="nhanvien1@gmail.com" Password="123456" isManager="0"></NhanVien>
+    <NhanVien id="2" Email="nhanvien2@gmail.com" Password="123456" isManager="0"></NhanVien>
+    <NhanVien id="3" Email="quanli@gmail.com" Password="123456" isManager="1"></NhanVien>
+	<NhanVien id="4" Email="quanli2@gmail.com" Password="123456" isManager="1"></NhanVien>
+	<NhanVien id="5" Email="quanli3@gmail.com" Password="123456" isManager="1"></NhanVien>
+	<NhanVien id="6" Email="quanli4@gmail.com" Password="123456" isManager="1"></NhanVien>
+	<NhanVien id="7" Email="quanli5@gmail.com" Password="123456" isManager="1"></NhanVien>
+	<NhanVien id="8" Email="nhanvien3@gmail.com" Password="123456" isManager="0"></NhanVien>
+	<NhanVien id="9" Email="nhanvien4@gmail.com" Password="123456" isManager="0"></NhanVien>
+	<NhanVien id="10" Email="nhanvien5@gmail.com" Password="123456" isManager="0"></NhanVien>
+	<NhanVien id="11" Email="nhanvien5@gmail.com" Password="123456" isManager="0"></NhanVien>
+	<NhanVien id="12" Email="nhanvien6@gmail.com" Password="123456" isManager="0"></NhanVien>
+	<NhanVien id="13" Email="nhanvien7@gmail.com" Password="123456" isManager="0"></NhanVien>
+	<NhanVien id="14" Email="nhanvien7@gmail.com" Password="123456" isManager="0"></NhanVien>
+	<NhanVien id="15" Email="nhanvien8@gmail.com" Password="123456" isManager="0"></NhanVien>
+	<NhanVien id="16" Email="nhanvien9@gmail.com" Password="123456" isManager="0"></NhanVien>
+	<NhanVien id="17" Email="nhanvien10@gmail.com" Password="123456" isManager="0"></NhanVien>
 </DanhSachNhanVien>

@@ -51,6 +51,7 @@ CacheData = new class Cache {
                 return this.userCache;
             })
         }else {
+            console.log(this.userCache);
             return this.userCache;
         }
     }
