@@ -60,22 +60,26 @@ let addProduct = (params) => {
 
 let addBill = (params) => {
     return new Promise((resolve, reject) => {
-        var sups = fs.readFileSync(supplierPath, 'UTF-8')
-        console.log(sups)
+        var bills = fs.readFileSync(billPath, 'UTF-8')
+        console.log(bills)
         let list = JSON.parse(parser.toJson(bills)).DanhSachDonHang.DonHang;
         let lastId = parseInt(list[list.length - 1].id);
-        var pos = sups.lastIndexOf("</DanhSachDonHang>")
+        var pos = bills.lastIndexOf("</DanhSachDonHang>")
         console.log(pos);
         var xml = `\t<DonHang id="${lastId + 1}" Ngay="${params.date}" TongTien="${params.billTotal}">\n\t\t<GioHang>\n`;
+        for (let i = 0; i < params.cart.length; i++) {
+            xml += `\t\t\t<MayAnh id='${params.cart[i].id}' Ten='${params.cart[i].name}' DonGia='${params.cart[i].price}' SoLuong='${params.cart[i].amount}' Tong='${params.cart[i].total}' />\n`;
+        }
+        xml += "\t\t</GioHang>\n\t</DonHang>\n</DanhSachDonHang>";
         console.log(xml);
-        fs.open(supplierPath, "r+", function(error, fd) {
+        fs.open(billPath, "r+", function(error, fd) {
             if(error){
                 reject({'error': error.message});
             }else{
-                console.log("Ghi Supplier");
+                console.log("Ghi Bill");
                 fs.writeSync(fd, xml, pos, "utf-8");
                 fs.close(fd); 
-                let newData = getMethod.getListSupplier()
+                let newData = getMethod.getListBill()
                 console.log(newData);
                 resolve(newData);
             }
@@ -97,7 +101,7 @@ let addSupplier = (params) => {
             if(error){
                 reject({'error': error.message});
             }else{
-                console.log("Ghi Product");
+                console.log("Ghi Supplier");
                 fs.writeSync(fd, xml, pos, "utf-8");
                 fs.close(fd); 
                 let newData = getMethod.getListSupplier()
