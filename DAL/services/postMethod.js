@@ -22,7 +22,7 @@ let register = (params) => {
                 reject({'error': error.message});
             }else{
                 console.log("Ghi User");
-                fs.writeSync(fd, xml, pos, "utf8");
+                fs.writeSync(fd, xml, pos, "utf-8");
                 fs.close(fd); 
                 let newData = getMethod.getListUser()
                 console.log(newData);
@@ -40,16 +40,17 @@ let addProduct = (params) => {
         let lastId = parseInt(list[list.length - 1].id);
         var pos = prods.lastIndexOf("</DanhSachMayAnh>")
         console.log(pos);
-        var xml = `\t<MayAnh id='${lastId + 1}' Ten='${params.name}' DonGia='${params.price}' HinhAnh='${params.imgUrl}' MaNCC='${params.supId}' SoLuongTon='${params.amount}' SoLuongBan='0'></MayAnh>\n</DanhSachMayAnh>`;
+        var xml = `\t<MayAnh id='${lastId + 1}' Ten='${params.name}' DonGia='${params.price}' HinhAnh='${params.imgUrl}' MaNCC='${params.supId}' SoLuongTon='${params.amount}' SoLuongBan='0' />\n</DanhSachMayAnh>`;
         console.log(xml);
         fs.open(cameraPath, "r+", function(error, fd) {
             if(error){
                 reject({'error': error.message});
             }else{
                 console.log("Ghi Product");
-                fs.writeSync(fd, xml, pos, "utf8");
+                fs.writeSync(fd, xml, pos, "utf-8");
                 fs.close(fd); 
-                let newData = getMethod.getListProduct()
+                let temp = parser.toJson(fs.readFileSync(cameraPath, 'utf-8'));
+                let newData = JSON.stringify(JSON.parse(temp).DanhSachMayAnh)
                 console.log(newData);
                 resolve(newData);
             }
@@ -59,22 +60,26 @@ let addProduct = (params) => {
 
 let addBill = (params) => {
     return new Promise((resolve, reject) => {
-        var sups = fs.readFileSync(supplierPath, 'UTF-8')
-        console.log(sups)
+        var bills = fs.readFileSync(billPath, 'UTF-8')
+        console.log(bills)
         let list = JSON.parse(parser.toJson(bills)).DanhSachDonHang.DonHang;
         let lastId = parseInt(list[list.length - 1].id);
-        var pos = sups.lastIndexOf("</DanhSachDonHang>")
+        var pos = bills.lastIndexOf("</DanhSachDonHang>")
         console.log(pos);
         var xml = `\t<DonHang id="${lastId + 1}" Ngay="${params.date}" TongTien="${params.billTotal}">\n\t\t<GioHang>\n`;
+        for (let i = 0; i < params.cart.length; i++) {
+            xml += `\t\t\t<MayAnh id='${params.cart[i].id}' Ten='${params.cart[i].name}' DonGia='${params.cart[i].price}' SoLuong='${params.cart[i].amount}' Tong='${params.cart[i].total}' />\n`;
+        }
+        xml += "\t\t</GioHang>\n\t</DonHang>\n</DanhSachDonHang>";
         console.log(xml);
-        fs.open(supplierPath, "r+", function(error, fd) {
+        fs.open(billPath, "r+", function(error, fd) {
             if(error){
                 reject({'error': error.message});
             }else{
-                console.log("Ghi Supplier");
-                fs.writeSync(fd, xml, pos, "utf8");
+                console.log("Ghi Bill");
+                fs.writeSync(fd, xml, pos, "utf-8");
                 fs.close(fd); 
-                let newData = getMethod.getListSupplier()
+                let newData = getMethod.getListBill()
                 console.log(newData);
                 resolve(newData);
             }
@@ -90,14 +95,14 @@ let addSupplier = (params) => {
         let lastId = parseInt(list[list.length - 1].id);
         var pos = sups.lastIndexOf("</DanhSachNhaCungCap>")
         console.log(pos);
-        var xml = `\t<NhaCungCap id='${lastId + 1}' Ten='${params.name}' DiaChi='${params.address}' SoDienThoai='${params.phone}'></NhaCungCap>\n</DanhSachNhaCungCap>`;
+        var xml = `\t<NhaCungCap id='${lastId + 1}' Ten='${params.name}' DiaChi='${params.address}' SoDienThoai='${params.phone}' />\n</DanhSachNhaCungCap>`;
         console.log(xml);
         fs.open(supplierPath, "r+", function(error, fd) {
             if(error){
                 reject({'error': error.message});
             }else{
-                console.log("Ghi Product");
-                fs.writeSync(fd, xml, pos, "utf8");
+                console.log("Ghi Supplier");
+                fs.writeSync(fd, xml, pos, "utf-8");
                 fs.close(fd); 
                 let newData = getMethod.getListSupplier()
                 console.log(newData);

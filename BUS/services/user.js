@@ -12,13 +12,12 @@ class User {
         return cacheData.getListUser();
     }
     //POST - /login
-    login(user) {
+    login(user, sessions) {
         let { email, password } = user;
         //Kiếm tra nếu tài khoản đã đăng nhập ở device khác thì xóa session
-        this.deleteSession(email);
-
         return new Promise((resolve, reject) => {
             let users = JSON.parse(this.list()).NhanVien;
+            console.log(users)
             let user = users.filter((user) => {
                 return user.Email === email && user.Password === password;
             });
@@ -28,19 +27,19 @@ class User {
             let token = this.generateUserToken()
             var result = user[0]
             result['accessToken'] = token
-            sessions.push(result);
             console.log(sessions);
-            resolve(user[0]);
+            resolve(result);
         })
     }
 
     //POST - /logout
-    logout(token) {
-        let user = this.getUserByToken(token);
+    logout(token, sessions) {
+        let user = this.getUserByToken(token, sessions);
         if (user !== -1) {
             sessions.splice(user, 1);
         }
         console.log(sessions);
+        return sessions
     }
 
     //POST - /register
@@ -79,27 +78,30 @@ class User {
         return token;
     }
 
-    getUserByToken(token) {
-        let user = sessions.find((user) => user.accessToken === token);
-        if (user != null || user != undefined){
+    getUserByToken(token, sessions) {
+        let user = sessions.find((user) => user.accessToken == token);
+        console.log(token)
+        console.log(sessions)
+        if (user == null || user == undefined){
             return -1;
         }
         return user;
     }
 
-    checkSession(email) {
-        let user = sessions.find((user) => user.email === email);
-        if (user != null || user != undefined){
+    checkSession(email, sessions) {
+        let user = sessions.find((user) => user.email == email);
+        if (user == null || user == undefined){
             return -1;
         }
         return user;
     }
     
-    deleteSession(email) {
-        let user = this.checkSession(email);
+    deleteSession(email, sessions) {
+        let user = this.checkSession(email, sessions);
         if (user !== -1) {
             sessions.splice(user, 1);
         }
+        return sessions
     }
 }
 

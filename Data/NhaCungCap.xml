@@ -1,7 +1,9 @@
 <DanhSachNhaCungCap>
-    <NhaCungCap id='1' Ten='Binh Minh Digital' DiaChi='110 Dien Bien Phu, Phuong Da Kao, Quan 1, TP.Ho Chi Minh' SoDienThoai='0902797066'></NhaCungCap>
-    <NhaCungCap id='2' Ten='Nguyen Kiet' DiaChi='27 Huynh Tinh Cua, Phuong 8, Quan 3, TP.Ho Chi Minh' SoDienThoai='0964111329'></NhaCungCap>
-    <NhaCungCap id='3' Ten='Vu Nhat Camera' DiaChi='20B Trang Thi, Hoan Kiem, Ha Noi.' SoDienThoai='02438265161'></NhaCungCap>
-    <NhaCungCap id='4' Ten='Giang Duy Dat Photo Camera' DiaChi='50/2 Truong Han Sieu, Quan 1, Tp HCM' SoDienThoai='0904551862'></NhaCungCap>
-	<NhaCungCap id='5' Ten='Thiên Hòa' DiaChi='117 Cách Mạng Tháng 8, Q10, TPHCM' SoDienThoai='0287771166'></NhaCungCap>
+    <NhaCungCap id='1' Ten='Binh Minh Digital' DiaChi='110 Dien Bien Phu, Phuong Da Kao, Quan 1, TP.Ho Chi Minh' SoDienThoai='0902797066' />
+    <NhaCungCap id='2' Ten='Nguyen Kiet' DiaChi='27 Huynh Tinh Cua, Phuong 8, Quan 3, TP.Ho Chi Minh' SoDienThoai='0964111329' />
+    <NhaCungCap id='3' Ten='Vu Nhat Camera' DiaChi='20B Trang Thi, Hoan Kiem, Ha Noi.' SoDienThoai='02438265161' />
+    <NhaCungCap id='4' Ten='Giang Duy Dat Photo Camera' DiaChi='50/2 Truong Han Sieu, Quan 1, Tp HCM' SoDienThoai='0904551862' />
+	<NhaCungCap id='5' Ten='Thien Haa' DiaChi='117 Cach Mang Thang 8, Q10, TPHCM' SoDienThoai='0287771166' />
+	<NhaCungCap id='6' Ten='Thien Haa' DiaChi='117 Cach Mang Thang 8, Q10, TPHCM' SoDienThoai='0287771166' />
+	<NhaCungCap id='7' Ten='Thien Haa' DiaChi='117 Cach Mang Thang 8, Q10, TPHCM' SoDienThoai='0287771166' />
 </DanhSachNhaCungCap>

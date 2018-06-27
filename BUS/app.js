@@ -10,6 +10,7 @@ var Bill = require('./services/bill');
 var Supplier = require('./services/supplier');
 
 let dalURL = 'http://localhost:3001';
+var sessions = [];
 
 app.createServer((req, res) => {
     res.setHeader("Access-Control-Allow-Origin", "*");
@@ -57,8 +58,11 @@ app.createServer((req, res) => {
                 case '/login':
                 req.on('end', () => {
                     console.log(req.body);
-                    User.login(req.body).then(data => {
+                    sessions = User.deleteSession(req.body.email, sessions);
+                    User.login(req.body, sessions).then(data => {
                         res.writeHeader(200, {'Content-Type': 'text/json'})
+                        sessions.push(data);
+                        console.log(sessions);
                         res.write(JSON.stringify(data));
                         res.end();
                     }).catch(err => {
@@ -83,50 +87,78 @@ app.createServer((req, res) => {
                 break
                 case '/addProduct':
                 req.on('end', () => {
-                    Product.add(req.body).then(data => {
-                        res.writeHeader(200, {'Content-Type': 'text/json'})
-                        res.write(JSON.stringify(data));
+                    let user = User.getUserByToken(req.headers.accesstoken, sessions)
+                    if (user == -1 || user == undefined){
+                        res.writeHeader(401, {'Content-Type': 'text/json'})
+                        res.write(JSON.stringify({'err': 'Unauthorization! please login again'}));
                         res.end();
-                    }).catch(err => {
-                        res.writeHeader(400, {'Content-Type': 'text/json'})
-                        res.write(JSON.stringify(err));
+                    }else if (user.isManager == 0){
+                        res.writeHeader(401, {'Content-Type': 'text/json'})
+                        res.write(JSON.stringify({'err': 'No Permission'}));
                         res.end();
-                    })
+                    }else{
+                        Product.add(req.body).then(data => {
+                            res.writeHeader(200, {'Content-Type': 'text/json'})
+                            console.log(data);
+                            res.write(JSON.stringify(data));
+                            res.end();
+                        }).catch(err => {
+                            res.writeHeader(400, {'Content-Type': 'text/json'})
+                            res.write(JSON.stringify(err));
+                            res.end();
+                        })
+                    }
                 });
                 break
                 case '/addBill':
                 req.on('end', () => {
-                    console.log(req.body)
-                    Bill.add(req.body).then(data => {
-                        res.writeHeader(200, {'Content-Type': 'text/json'})
-                        res.write(JSON.stringify(data));
+                    let user = User.getUserByToken(req.headers.accesstoken, sessions)
+                    if (user == -1 || user == undefined){
+                        res.writeHeader(401, {'Content-Type': 'text/json'})
+                        res.write(JSON.stringify({'err': 'Unauthorization! please login again'}));
                         res.end();
-                    }).catch(err => {
-                        res.writeHeader(400, {'Content-Type': 'text/json'})
-                        res.write(JSON.stringify(err));
-                        res.end();
-                    })
+                    }else{
+                        Bill.add(req.body).then(data => {
+                            res.writeHeader(200, {'Content-Type': 'text/json'})
+                            res.write(JSON.stringify(data));
+                            res.end();
+                        }).catch(err => {
+                            res.writeHeader(400, {'Content-Type': 'text/json'})
+                            res.write(JSON.stringify(err));
+                            res.end();
+                        })
+                    }
                 });
                 break
                 case '/addSupplier':
                 req.on('end', () => {
-                    console.log(req.body)
-                    Supplier.add(req.body).then(data => {
-                        res.writeHeader(200, {'Content-Type': 'text/json'})
-                        res.write(JSON.stringify(data));
+                    let user = User.getUserByToken(req.headers.accesstoken, sessions)
+                    if (user == -1 || user == undefined){
+                        res.writeHeader(401, {'Content-Type': 'text/json'})
+                        res.write(JSON.stringify({'err': 'Unauthorization! please login again'}));
                         res.end();
-                    }).catch(err => {
-                        res.writeHeader(400, {'Content-Type': 'text/json'})
-                        res.write(JSON.stringify(err));
+                    }else if (user.isManager == 0){
+                        res.writeHeader(401, {'Content-Type': 'text/json'})
+                        res.write(JSON.stringify({'err': 'No Permission'}));
                         res.end();
-                    })
+                    }else{
+                        Supplier.add(req.body).then(data => {
+                            res.writeHeader(200, {'Content-Type': 'text/json'})
+                            res.write(JSON.stringify(data));
+                            res.end();
+                        }).catch(err => {
+                            res.writeHeader(400, {'Content-Type': 'text/json'})
+                            res.write(JSON.stringify(err));
+                            res.end();
+                        })
+                    }
                 });
                 break
                 case '/logout':
                 req.on('end', () => {
                     let token = req.headers.acccesstoken;
                     console.log(token);
-                    User.logout(token);
+                    sessions = User.logout(token);
                     res.writeHeader(200, {'Content-Type': 'text/json'})
                     res.write(JSON.stringify({'message': 'Logout successfully'}));
                     res.end();
