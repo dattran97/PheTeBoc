@@ -79,16 +79,18 @@ class User {
     }
 
     getUserByToken(token, sessions) {
-        let user = sessions.find((user) => user.accessToken === token);
-        if (user != null || user != undefined){
+        let user = sessions.find((user) => user.accessToken == token);
+        console.log(token)
+        console.log(sessions)
+        if (user == null || user == undefined){
             return -1;
         }
         return user;
     }
 
     checkSession(email, sessions) {
-        let user = sessions.find((user) => user.email === email);
-        if (user != null || user != undefined){
+        let user = sessions.find((user) => user.email == email);
+        if (user == null || user == undefined){
             return -1;
         }
         return user;

@@ -22,7 +22,7 @@ let register = (params) => {
                 reject({'error': error.message});
             }else{
                 console.log("Ghi User");
-                fs.writeSync(fd, xml, pos, "utf8");
+                fs.writeSync(fd, xml, pos, "utf-8");
                 fs.close(fd); 
                 let newData = getMethod.getListUser()
                 console.log(newData);
@@ -40,16 +40,17 @@ let addProduct = (params) => {
         let lastId = parseInt(list[list.length - 1].id);
         var pos = prods.lastIndexOf("</DanhSachMayAnh>")
         console.log(pos);
-        var xml = `\t<MayAnh id='${lastId + 1}' Ten='${params.name}' DonGia='${params.price}' HinhAnh='${params.imgUrl}' MaNCC='${params.supId}' SoLuongTon='${params.amount}' SoLuongBan='0'></MayAnh>\n</DanhSachMayAnh>`;
+        var xml = `\t<MayAnh id='${lastId + 1}' Ten='${params.name}' DonGia='${params.price}' HinhAnh='${params.imgUrl}' MaNCC='${params.supId}' SoLuongTon='${params.amount}' SoLuongBan='0' />\n</DanhSachMayAnh>`;
         console.log(xml);
         fs.open(cameraPath, "r+", function(error, fd) {
             if(error){
                 reject({'error': error.message});
             }else{
                 console.log("Ghi Product");
-                fs.writeSync(fd, xml, pos, "utf8");
+                fs.writeSync(fd, xml, pos, "utf-8");
                 fs.close(fd); 
-                let newData = getMethod.getListProduct()
+                let temp = parser.toJson(fs.readFileSync(cameraPath, 'utf-8'));
+                let newData = JSON.stringify(JSON.parse(temp).DanhSachMayAnh)
                 console.log(newData);
                 resolve(newData);
             }
@@ -72,7 +73,7 @@ let addBill = (params) => {
                 reject({'error': error.message});
             }else{
                 console.log("Ghi Supplier");
-                fs.writeSync(fd, xml, pos, "utf8");
+                fs.writeSync(fd, xml, pos, "utf-8");
                 fs.close(fd); 
                 let newData = getMethod.getListSupplier()
                 console.log(newData);
@@ -90,14 +91,14 @@ let addSupplier = (params) => {
         let lastId = parseInt(list[list.length - 1].id);
         var pos = sups.lastIndexOf("</DanhSachNhaCungCap>")
         console.log(pos);
-        var xml = `\t<NhaCungCap id='${lastId + 1}' Ten='${params.name}' DiaChi='${params.address}' SoDienThoai='${params.phone}'></NhaCungCap>\n</DanhSachNhaCungCap>`;
+        var xml = `\t<NhaCungCap id='${lastId + 1}' Ten='${params.name}' DiaChi='${params.address}' SoDienThoai='${params.phone}' />\n</DanhSachNhaCungCap>`;
         console.log(xml);
         fs.open(supplierPath, "r+", function(error, fd) {
             if(error){
                 reject({'error': error.message});
             }else{
                 console.log("Ghi Product");
-                fs.writeSync(fd, xml, pos, "utf8");
+                fs.writeSync(fd, xml, pos, "utf-8");
                 fs.close(fd); 
                 let newData = getMethod.getListSupplier()
                 console.log(newData);
