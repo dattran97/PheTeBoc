@@ -1,20 +1,207 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>iCamera - Quản lý</title>
 
-    <link rel="stylesheet" href="./assets/vendor/css/bootstrap-theme.min.css">
-    <link rel="stylesheet" href="./assets/vendor/css/bootstrap.min.css">
-    <link rel="stylesheet" href="./assets/css/styles.css">
+    <link href="./assets/vendor/css/bootstrap.min.css" rel="stylesheet">
+    <link href="./assets/css/styles.css" rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/quanly.css">
+    <!--[if lt IE 9]>
+<script src="js/html5shiv.js"></script>
+<script src="js/respond.min.js"></script>
+<![endif]-->
+
 </head>
+
 <body>
-    
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#sidebar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">
+                    <span>iCamera</span> STAFF</a>
+                <ul class="user-menu">
+                    <li class="dropdown pull-right">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <span class="glyphicon glyphicon-user" id="userName"></span> An Nguyen
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li>
+                                <a href="#">
+                                    <span class="glyphicon glyphicon-log-out"></span> Logout</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+    <div class="col-sm-12 col-sm-offset-0 col-lg-12 col-lg-offset-0 main">
+        <div class="row">
+            <ol class="breadcrumb">
+                <li>
+                    <a href="#">
+                        <span class="glyphicon glyphicon-home"></span>
+                    </a>
+                </li>
+                <li class="active">Quản lý</li>
+            </ol>
+        </div>
+        <!--/.row-->
+
+        <div class="row">
+            <div class="col-lg-12">
+                <!-- <h1 class="page-header" id="tenNhanvien">NV Nguyen Van A</h1> -->
+                <div class="row">
+                    <!-- Thong tin nhan vien -->
+                    <div class="col-xs-12 col-md-4 col-lg-4">
+                        <div class="panel panel-teal panel-widget">
+                            <div class="row no-padding">
+                                <div class="col-sm-3 col-lg-5 widget-left">
+                                    <em class="glyphicon glyphicon-user glyphicon-l"></em>
+                                </div>
+                                <div class="col-sm-9 col-lg-7 widget-right">
+                                    <div class="large" id="tenNhanVien">An Nguyen</div>
+                                    <div class="text-muted" id="masoNV">#123456</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End of Thong tin nhan vien -->
+                    <!--  -->
+                    <div class="col-xs-12 col-md-4 col-lg-4">
+                        <div class="panel panel-blue panel-widget ">
+                            <div class="row no-padding">
+                                <div class="col-sm-3 col-lg-5 widget-left">
+                                    <em class="glyphicon glyphicon-shopping-cart glyphicon-l"></em>
+                                </div>
+                                <div class="col-sm-9 col-lg-7 widget-right">
+                                    <div class="large" id="current-month-orders">50</div>
+                                    <div class="text-muted">Đơn hàng tháng
+                                        <span id="current-month">6</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-md-4 col-lg-4">
+                        <div class="panel panel-red panel-widget">
+                            <div class="row no-padding">
+                                <div class="col-sm-3 col-lg-5 widget-left">
+                                    <em class="glyphicon glyphicon-stats glyphicon-l"></em>
+                                </div>
+                                <div class="col-sm-9 col-lg-7 widget-right">
+                                    <div class="large" id="totalView">25.2k</div>
+                                    <div class="text-muted">Lượt truy cập</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--/.row-->
+        <div class="row">
+            <div class="col-lg-1 col-md-0 col-sm-0"></div>
+            <div class="col-lg-10 col-md-12 col-sm-12">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <h2>Danh sách sản phẩm</h2>
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <!-- Trigger the modal with a button -->
+                                <button type="button" class="btn btn-info btn-md" data-toggle="modal" data-target="#myModal">
+                                        <span class="glyphicon glyphicon-plus-sign"></span> Thêm mặt hàng mới
+                                </button>
+
+                                <!-- Modal -->
+                                <div class="modal fade" id="myModal" role="dialog">
+                                    <div class="modal-dialog modal-lg">
+                                        <!-- Modal content-->
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                <h4 class="modal-title">Bổ sung Mặt hàng</h4>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class="row">
+                                                    <div class="col-lg-5 col-col-md-5 col-sm-4 col-xs-12">
+
+                                                    </div>
+                                                    <div class="col-lg-7 col-col-md-7 col-sm-8 col-xs-12">
+                                                        
+                                                        </div>
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-default" data-dismiss="modal">Hủy</button>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <!-- End of Modal -->
+                            </div>
+                        </div>
+                        <table class="table table-condensed table-hover">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>ID</th>
+                                    <th>Hình ảnh</th>
+                                    <th>Tên Sản Phẩm</th>
+                                    <th>Giá (VND)</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>123</td>
+                                    <td>
+                                        <img src="http://via.placeholder.com/100x100" alt="hinhanh">
+                                    </td>
+                                    <td>Canon</td>
+                                    <td>12345</td>
+                                    <td>
+                                        <div class="btn-group-vertical btn-group-sm">
+                                            <button class="btn btn-danger suspend">
+                                                <span class="glyphicon glyphicon-ban-circle"></span> Tạm ngưng
+                                            </button>
+                                            <button class="btn btn-primary">
+                                                <span class="glyphicon glyphicon-wrench"></span> Điều chỉnh giá
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-1 col-md-0 col-sm-0"></div>
+    </div>
+    <!--/.row-->
+    </div>
+    <!--/.main-->
+
+    <script src="./assets/vendor/js/jquery-1.11.1.min.js"></script>
+    <script src="./assets/vendor/js/bootstrap.min.js"></script>
+    <script src="./assets/js/quanly.js"></script>
 </body>
-<script src="./assets/vendor/js/jquery-1.11.1.min.js"></script>
-<script src="./assets/vendor/js/bootstrap.min.js"></script>
-<script src="./assets/js/quanly.js"></script>
+
 </html>
