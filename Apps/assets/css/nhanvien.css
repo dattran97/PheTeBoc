@@ -1,0 +1,27 @@
+.navbar-header .navbar-brand {
+    text-transform: none;
+}
+.form-horizontal .form-group {
+
+    margin-right: 0;
+    margin-left: 0;
+
+}
+.form-group {
+    margin-bottom: 0;
+}
+.form-group>label{
+    font-weight: 500;
+    font-size: 90%;
+}
+
+.customer-info{
+    height:270px;
+}
+.panel-body,
+.boostrap-table{
+    background-color: white;
+}
+.panel-default{
+    margin-bottom: 0;
+}
