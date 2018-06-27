@@ -33,6 +33,33 @@
 			"response": []
 		},
 		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"nhanvien3@gmail.com\",\n\t\"password\": \"123456\",\n\t\"isManager\": 0\n}"
+				},
+				"url": {
+					"raw": "localhost:3002/register",
+					"host": [
+						"localhost"
+					],
+					"port": "3002",
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "Get danh sách nhà cung cấp",
 			"request": {
 				"method": "GET",
@@ -58,13 +85,13 @@
 				"header": [],
 				"body": {},
 				"url": {
-					"raw": "localhost:3002/bills",
+					"raw": "localhost:3002/products",
 					"host": [
 						"localhost"
 					],
 					"port": "3002",
 					"path": [
-						"bills"
+						"products"
 					]
 				}
 			},
@@ -103,6 +130,62 @@
 					"port": "3002",
 					"path": [
 						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Logout",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "acccessToken",
+						"value": "HWysaxcPEoGPuKeGaCpmUhNwoEEdbrAJFpqNPrTgaWXCwFekYYTGQNIMTfdbIBse"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:3002/logout",
+					"host": [
+						"localhost"
+					],
+					"port": "3002",
+					"path": [
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get sản phẩm theo supplierId",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "localhost:3002/products?supplierId=1",
+					"host": [
+						"localhost"
+					],
+					"port": "3002",
+					"path": [
+						"products"
+					],
+					"query": [
+						{
+							"key": "supplierId",
+							"value": "1"
+						}
 					]
 				}
 			},

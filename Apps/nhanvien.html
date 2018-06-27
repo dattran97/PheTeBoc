@@ -152,7 +152,103 @@
                                                     </form>
                                                 </div>
                                                 <div class="col-lg-8 col-md-7 col-sm-7 col-xs-12 order-list">
-                                                    
+                                                        <div class="row">
+                                                                <label for="products">Thêm mặt hàng</label>
+                                                        </div>
+                                                        <div class="row">   
+                                                                    <div class="form-group form-inline">
+                                                                        <select class="form-control" style="max-width:600px; min-width:290px" id="sel-prod">
+                                                                            <option value="" selected="true" disabled="disabled">-- Chọn mặt hàng --</option>
+                                                                            <option value="1">Option 1</option>
+                                                                            <option value="2">Option 2</option>
+                                                                            <option value="3">Option 3</option>
+                                                                            <option value="4">Option 4</option>
+                                                                        </select>
+                                                                        <select class="form-control" id="prod-quantity">
+                                                                                <option value="" selected="true" disabled="disabled">-- Số lượng --</option>
+                                                                                <option value="1">1</option>
+                                                                                <option value="2">2</option>
+                                                                                <option value="3">3</option>
+                                                                                <option value="4">4</option>
+                                                                                <option value="5">5</option>
+                                                                                <option value="6">6</option>
+                                                                                <option value="7">7</option>
+                                                                                <option value="8">8</option>
+                                                                                <option value="9">9</option>
+                                                                                <option value="10">10</option>
+                                                                            </select>
+    
+                                                                    <button class="btn btn-primary" id="add2ProList"><span class="glyphicon glyphicon-plus-sign"></span> Thêm</button>
+                                                                    </div>
+                                                        </div>
+                                                    <!-- Table Order List-->
+                                                    <div class="row">
+                                                            <label>Đã chọn</label>
+                                                    </div>
+                                                    <div class="fixed-table-container borderless">
+                                                        <div class="fixed-table-body">
+                                                            <!-- <div class="fixed-table-loading" style="top: 37px; display: none;">Loading, please wait…</div> -->
+                                                            <table data-toggle="table" class="table table-hover">
+                                                                <thead>
+                                                                    <tr class="info">
+                                                                        <th>
+                                                                            <div class="th-inner ">Mặt hàng</div>
+                                                                            <div class="fht-cell"></div>
+                                                                        </th>
+                                                                        <th>
+                                                                            <div class="th-inner ">Số lượng</div>
+                                                                            <div class="fht-cell"></div>
+                                                                        </th>
+                                                                        <th>
+                                                                            <div class="th-inner ">Giá</div>
+                                                                            <div class="fht-cell"></div>
+                                                                        </th>
+                                                                        <th>
+                                                                            <div class="th-inner ">Tiền</div>
+                                                                            <div class="fht-cell"></div>
+                                                                        </th>
+                                                                        <th>
+                                                                            -
+                                                                        </th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr data-index="0">
+                                                                        <td>ABC</td>
+                                                                        <td>3</td>
+                                                                        <td>$2</td>
+                                                                        <td>$6</td>
+                                                                        <td>
+                                                                            <button type="button" class="btn btn-danger removeItem">
+                                                                                X
+                                                                            </button>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr data-index="1">
+                                                                        <td>DEF</td>
+                                                                        <td>3</td>
+                                                                        <td>$2</td>
+                                                                        <td>$6</td>
+                                                                        <td>
+                                                                            <button type="button" class="btn btn-danger removeItem">
+                                                                                X
+                                                                            </button>
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                    <!-- End of Order list -->
+                                                    <div class="row">
+                                                        <div class="col-lg-8 col-md-8 col-sm-6 col-xs-8">
+
+                                                        </div>
+                                                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-4">
+                                                        Tổng cộng: <span id="priceInTotal">$0</span>
+                                                            </div>
+                                                            <div class="col-lg-1 col-md-4 col-sm-6 col-xs-4"></div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -166,17 +262,42 @@
                         </div>
                     </div>
                 </div>
+                <!-- Danh sach mat hang -->
                 <div class="panel-body">
-                    <table data-toggle="table" data-url="./assets/tables/data1.json" data-show-refresh="true" data-show-toggle="true" data-show-columns="true"
+                    <table data-toggle="table" data-show-refresh="true" data-show-toggle="true" data-show-columns="true"
                         data-search="true" data-select-item-name="toolbar1" data-pagination="true" data-sort-name="name" data-sort-order="desc">
                         <thead>
                             <tr>
                                 <th data-field="state" data-checkbox="true">ID</th>
                                 <th data-field="id" data-sortable="true">ID Sản phẩm</th>
+                                <th data-field="img" data-sortable="true">Hình ảnh</th>
                                 <th data-field="name" data-sortable="true">Tên sản phẩm</th>
                                 <th data-field="price" data-sortable="true">Giá sản phẩm</th>
                             </tr>
                         </thead>
+                        <tbody>
+                            <tr data-index="0">    
+                                <td>
+                                    1
+                                </td>
+
+                                <td>123</td>
+                                <td><img src="./assets/imgs/Canon-Camera-HD-Wallpapers-2-2.jpg" style="max-height:50px;" alt="hinhanh"></td>
+                                <td>aaa</td>
+                                <td>$1</td>
+                            </tr>
+                            <tr data-index="1">    
+                                    <td>
+                                        2
+                                    </td>
+    
+                                    <td>11</td>
+                                    <td><img src="./assets/imgs/Canon-Camera-HD-Wallpapers-2-2.jpg" style="max-height:50px;" alt="hinhanh"></td>
+                                    <td>bb</td>
+                                    <td>$12</td>
+                                </tr>
+                                
+                        </tbody>
                     </table>
                 </div>
             </div>
