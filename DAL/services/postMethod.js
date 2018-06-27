@@ -23,10 +23,12 @@ let register = (params) => {
             }else{
                 console.log("Ghi User");
                 fs.writeSync(fd, xml, pos, "utf-8");
-                fs.close(fd); 
-                let newData = getMethod.getListUser()
-                console.log(newData);
-                resolve(newData);
+                fs.close(fd, function(err){
+                    if (err) reject({'error': error.message});
+                    let newData = getMethod.getListUser()
+                    console.log(newData);
+                    resolve(newData);
+                })
             }
         });
     });
@@ -34,7 +36,7 @@ let register = (params) => {
 
 let addProduct = (params) => {
     return new Promise((resolve, reject) => {
-        var prods = fs.readFileSync(cameraPath, 'UTF-8')
+        var prods = fs.readFileSync(cameraPath, 'utf-8')
         console.log(prods)
         let list = JSON.parse(parser.toJson(prods)).DanhSachMayAnh.MayAnh;
         let lastId = parseInt(list[list.length - 1].id);
@@ -48,11 +50,10 @@ let addProduct = (params) => {
             }else{
                 console.log("Ghi Product");
                 fs.writeSync(fd, xml, pos, "utf-8");
-                fs.close(fd); 
-                let temp = parser.toJson(fs.readFileSync(cameraPath, 'utf-8'));
-                let newData = JSON.stringify(JSON.parse(temp).DanhSachMayAnh)
-                console.log(newData);
-                resolve(newData);
+                fs.close(fd, function(err){
+                    if (err) reject({'error': error.message});
+                    resolve({'message': 'Add successfully'});
+                });
             }
         });
     });
@@ -60,7 +61,7 @@ let addProduct = (params) => {
 
 let addBill = (params) => {
     return new Promise((resolve, reject) => {
-        var bills = fs.readFileSync(billPath, 'UTF-8')
+        var bills = fs.readFileSync(billPath, 'utf-8')
         console.log(bills)
         let list = JSON.parse(parser.toJson(bills)).DanhSachDonHang.DonHang;
         let lastId = parseInt(list[list.length - 1].id);
@@ -78,10 +79,12 @@ let addBill = (params) => {
             }else{
                 console.log("Ghi Bill");
                 fs.writeSync(fd, xml, pos, "utf-8");
-                fs.close(fd); 
-                let newData = getMethod.getListBill()
-                console.log(newData);
-                resolve(newData);
+                fs.close(fd, function(err){
+                    if (err) reject({'error': error.message});
+                    let newData = getMethod.getListBill()
+                    console.log(newData);
+                    resolve(newData);
+                });
             }
         });
     });
@@ -89,7 +92,7 @@ let addBill = (params) => {
 
 let addSupplier = (params) => {
     return new Promise((resolve, reject) => {
-        var sups = fs.readFileSync(supplierPath, 'UTF-8')
+        var sups = fs.readFileSync(supplierPath, 'utf-8')
         console.log(sups)
         let list = JSON.parse(parser.toJson(sups)).DanhSachNhaCungCap.NhaCungCap;
         let lastId = parseInt(list[list.length - 1].id);
@@ -103,10 +106,12 @@ let addSupplier = (params) => {
             }else{
                 console.log("Ghi Supplier");
                 fs.writeSync(fd, xml, pos, "utf-8");
-                fs.close(fd); 
-                let newData = getMethod.getListSupplier()
-                console.log(newData);
-                resolve(newData);
+                fs.close(fd, function(err){
+                    if (err) reject({'error': error.message});
+                    let newData = getMethod.getListSupplier()
+                    console.log(newData);
+                    resolve(newData);
+                });
             }
         });
     });

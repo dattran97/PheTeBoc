@@ -16,4 +16,10 @@
 	<NhanVien id="15" Email="nhanvien8@gmail.com" Password="123456" isManager="0"></NhanVien>
 	<NhanVien id="16" Email="nhanvien9@gmail.com" Password="123456" isManager="0"></NhanVien>
 	<NhanVien id="17" Email="nhanvien10@gmail.com" Password="123456" isManager="0"></NhanVien>
+	<NhanVien id="18" Email="nhanvien10@gmail.com" Password="123456" isManager="0"></NhanVien>
+	<NhanVien id="19" Email="nhanvien10@gmail.com" Password="123456" isManager="0"></NhanVien>
+	<NhanVien id="20" Email="nhanvien14@gmail.com" Password="123456" isManager="0"></NhanVien>
+	<NhanVien id="21" Email="nhanvien14@gmail.com" Password="123456" isManager="0"></NhanVien>
+	<NhanVien id="22" Email="nhanvien14@gmail.com" Password="123456" isManager="0"></NhanVien>
+	<NhanVien id="23" Email="nhanvien14@gmail.com" Password="123456" isManager="0"></NhanVien>
 </DanhSachNhanVien>

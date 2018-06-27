@@ -99,9 +99,7 @@ app.createServer((req, res) => {
                     }else{
                         Product.add(req.body).then(data => {
                             res.writeHeader(200, {'Content-Type': 'text/json'})
-                            console.log(data);
-                            res.write(JSON.stringify(data));
-                            res.end();
+                            res.end(data);
                         }).catch(err => {
                             res.writeHeader(400, {'Content-Type': 'text/json'})
                             res.write(JSON.stringify(err));
@@ -120,8 +118,7 @@ app.createServer((req, res) => {
                     }else{
                         Bill.add(req.body).then(data => {
                             res.writeHeader(200, {'Content-Type': 'text/json'})
-                            res.write(JSON.stringify(data));
-                            res.end();
+                            res.end(data);
                         }).catch(err => {
                             res.writeHeader(400, {'Content-Type': 'text/json'})
                             res.write(JSON.stringify(err));
@@ -144,8 +141,7 @@ app.createServer((req, res) => {
                     }else{
                         Supplier.add(req.body).then(data => {
                             res.writeHeader(200, {'Content-Type': 'text/json'})
-                            res.write(JSON.stringify(data));
-                            res.end();
+                            res.end(data);
                         }).catch(err => {
                             res.writeHeader(400, {'Content-Type': 'text/json'})
                             res.write(JSON.stringify(err));
