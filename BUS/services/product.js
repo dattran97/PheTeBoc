@@ -1,5 +1,8 @@
+const request = require('request');
 var cache = require('../cache');
 var cacheData = cache.CacheData;
+
+let svURL = 'http://localhost:3001';
 
 class Product {
     constructor() {}
@@ -9,6 +12,7 @@ class Product {
         return cacheData.getListProduct();
     }
 
+    //GET - /products?supplierId=
     listBySupplier(supId) {
         return new Promise((resolve, reject) => {
             let data = JSON.parse(this.list()).MayAnh;
@@ -23,6 +27,30 @@ class Product {
                 'MayAnh': products 
             });
         })
+    }
+
+    //POST - /addProduct
+    add(params) {
+        return new Promise((resolve, reject) => {
+            //Gọi API
+            var options = {
+                uri: svURL + '/addProduct',
+                json: params,
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            }
+            console.log(options);
+            request(options, (err, res, body) => {
+                if (err) {
+                    return reject(err);
+                }else{
+                    cacheData.updateListProduct(JSON.stringify(body));
+                    return resolve(body);
+                }
+            });
+        });
     }
 }
 

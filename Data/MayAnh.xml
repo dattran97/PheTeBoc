@@ -1,31 +1,33 @@
  <DanhSachMayAnh>
-    <MayAnh id='1' Ten='Canon EOS 750D Kit EF S18-55 IS STM ' DonGia='12490000' HinhAnh='1.jpg' MaNCC='1' SoLuongTon='6' SoLuongBan='0' />
-    <MayAnh id='2' Ten='Sony CyberShot DSC H300 (Đen)' DonGia='3450000' HinhAnh='2.jpg' MaNCC='2' SoLuongTon='11' SoLuongBan='0' />
-    <MayAnh id='4' Ten='  Sony Alpha A6000 (ILCE-6000L) kit 16-50 F3.5-5.6 OSS (Đen)' DonGia='12490000' HinhAnh='4.jpg' MaNCC='1' SoLuongTon='2' SoLuongBan='0' />
-    <MayAnh id='5' Ten='Sony CyberShot DSC H400 (Đen)' DonGia='5090000' HinhAnh='5.jpg' MaNCC='1' SoLuongTon='6' SoLuongBan='0' />
-    <MayAnh id='6' Ten=' Canon EOS M10 Kit EF-M15-45 (Trắng)' DonGia='6700000' HinhAnh='6.jpg' MaNCC='2' SoLuongTon='9' SoLuongBan='0' />
-    <MayAnh id='7' Ten='Fujifilm X-A3 Kit XC16-50mm F3.5-5.6 OIS II ( bạc)' DonGia='10390000' HinhAnh='7.jpg' MaNCC='2' SoLuongTon='12' SoLuongBan='0' />
-    <MayAnh id='8' Ten='Sony Alpha A6000 (ILCE-6000L) kit 16-50 F3.5-5.6 OSS (Bạc)' DonGia='12490000' HinhAnh='8.jpg' MaNCC='3' SoLuongTon='19' SoLuongBan='0' />
-    <MayAnh id='9' Ten=' Sony Alpha A6000 (ILCE-6000) Body (đen)' DonGia='9990000' HinhAnh='9.jpg' MaNCC='4' SoLuongTon='8' SoLuongBan='0' />
-    <MayAnh id='10' Ten='Sony Alpha A6000 (ILCE-6000L) kit 16-50 F3.5-5.6 OSS (Xám)' DonGia='12490000' HinhAnh='10.jpg' MaNCC='3' SoLuongTon='15' SoLuongBan='0' />
-    <MayAnh id='11' Ten='Nikon D3400 Kit AF-P 18-55 VR ' DonGia='9690000' HinhAnh='11.jpg' MaNCC='4' SoLuongTon='10' SoLuongBan='0' />
-    <MayAnh id='12' Ten='Canon PowerShot G7 X Mark II (hàng nhập khẩu)' DonGia='11990000' HinhAnh='12.jpg' MaNCC='2' SoLuongTon='10' SoLuongBan='0' />
-    <MayAnh id='13' Ten='Fujifilm X-A3 Kit XC16-50 F3.5-5.6 OIS II (Nâu)' DonGia='10390000' HinhAnh='13.jpg' MaNCC='3' SoLuongTon='19' SoLuongBan='0' />
-    <MayAnh id='14' Ten='Canon EOS 6D Kit EF 24-105 F4L IS USM ' DonGia='38000000' HinhAnh='14.jpg' MaNCC='3' SoLuongTon='19' SoLuongBan='0' />
-    <MayAnh id='15' Ten='Canon Ixus 185 (Đen)' DonGia='2350000' HinhAnh='15.jpg' MaNCC='3' SoLuongTon='16' SoLuongBan='0' />
-    <MayAnh id='16' Ten='Sony Cybershot DSC W830 (Đen)' DonGia='2550000' HinhAnh='16.jpg' MaNCC='1' SoLuongTon='6' SoLuongBan='0' />
-    <MayAnh id='17' Ten='Sony DSC WX220 (Đen)' DonGia='3600000' HinhAnh='17.jpg' MaNCC='2' SoLuongTon='11' SoLuongBan='0' />
-    <MayAnh id='18' Ten='Canon EOS 6D Body' DonGia='25590000' HinhAnh='18.jpg' MaNCC='2' SoLuongTon='10' SoLuongBan='0' />
-    <MayAnh id='19' Ten='Canon PowerShot SX430 IS' DonGia='5350000' HinhAnh='19.jpg' MaNCC='3' SoLuongTon='14' SoLuongBan='0' />
-    <MayAnh id='20' Ten='Sony Cybershot DSC-HX350' DonGia='7790000' HinhAnh='20.jpg' MaNCC='3' SoLuongTon='19' SoLuongBan='0' />
-    <MayAnh id='21' Ten='Canon EOS 80D Body (Hàng nhập khẩu)' DonGia='18900000' HinhAnh='21.jpg' MaNCC='2' SoLuongTon='12' SoLuongBan='0' />
-    <MayAnh id='22' Ten='Fujifilm FinePix XP120 (vàng)' DonGia='5090000' HinhAnh='22.jpg' MaNCC='1' SoLuongTon='5' SoLuongBan='0' />
-    <MayAnh id='23' Ten='Canon EOS 1300D Kit 18-55mm f/3.5-5.6 III (hàng nhập khẩu)' DonGia='9390000' HinhAnh='23.jpg' MaNCC='2' SoLuongTon='7' SoLuongBan='0' />
-    <MayAnh id='24' Ten='Canon EOS 750D Body +  EF50MM F/1.8 STM' DonGia='13900000' HinhAnh='24.jpg' MaNCC='1' SoLuongTon='5' SoLuongBan='0' />
-    <MayAnh id='25' Ten='Nikon Coolpix B700' DonGia='8490000' HinhAnh='25.jpg' MaNCC='1' SoLuongTon='6' SoLuongBan='0' />
-    <MayAnh id='26' Ten='Sony DSC WX220 (Vàng)' DonGia='3600000' HinhAnh='26.jpg' MaNCC='2' SoLuongTon='11' SoLuongBan='0' />
-    <MayAnh id='27' Ten='Fujifilm X-A10 kit XC16-50MM F3.5-5.6 OIS II (Nâu)' DonGia='7990000' HinhAnh='27.jpg' MaNCC='3' SoLuongTon='19' SoLuongBan='0' />
-    <MayAnh id='28' Ten='Canon EOS 6D Kit EF 24-105 F4L IS USM (hàng nhập khẩu)' DonGia='35790000' HinhAnh='28.jpg' MaNCC='2' SoLuongTon='8' SoLuongBan='0' />
-    <MayAnh id='29' Ten='SONY ALPHA A6500 (ILCE-6500) BODY' DonGia='27490000' HinhAnh='29.jpg' MaNCC='3' SoLuongTon='3' SoLuongBan='0' />
-    <MayAnh id='30' Ten='Nikon D5500 kit AF-P 18-55 VR ' DonGia='14890000' HinhAnh='30.jpg' MaNCC='4' SoLuongTon='6' SoLuongBan='0' />
+	<MayAnh id='1' Ten='Canon EOS 750D Kit EF S18-55 IS STM' DonGia='12490000' HinhAnh='1.jpg' MaNCC='1' SoLuongTon='6' SoLuongBan='0' />
+	<MayAnh id='2' Ten='Sony CyberShot DSC H300 (Den)' DonGia='3450000' HinhAnh='2.jpg' MaNCC='2' SoLuongTon='11' SoLuongBan='0' />
+	<MayAnh id='4' Ten='Sony Alpha A6000 (ILCE-6000L) kit 16-50 F3.5-5.6 OSS (Den)' DonGia='12490000' HinhAnh='4.jpg' MaNCC='1' SoLuongTon='2' SoLuongBan='0' />
+	<MayAnh id='5' Ten='Sony CyberShot DSC H400 (Den)' DonGia='5090000' HinhAnh='5.jpg' MaNCC='1' SoLuongTon='6' SoLuongBan='0' />
+	<MayAnh id='6' Ten='Canon EOS M10 Kit EF-M15-45 (Trang)' DonGia='6700000' HinhAnh='6.jpg' MaNCC='2' SoLuongTon='9' SoLuongBan='0' />
+	<MayAnh id='7' Ten='Fujifilm X-A3 Kit XC16-50mm F3.5-5.6 OIS II ( bac)' DonGia='10390000' HinhAnh='7.jpg' MaNCC='2' SoLuongTon='12' SoLuongBan='0' />
+	<MayAnh id='8' Ten='Sony Alpha A6000 (ILCE-6000L) kit 16-50 F3.5-5.6 OSS (Bac)' DonGia='12490000' HinhAnh='8.jpg' MaNCC='3' SoLuongTon='19' SoLuongBan='0' />
+	<MayAnh id='9' Ten='Sony Alpha A6000 (ILCE-6000) Body (den)' DonGia='9990000' HinhAnh='9.jpg' MaNCC='4' SoLuongTon='8' SoLuongBan='0' />
+	<MayAnh id='10' Ten='Sony Alpha A6000 (ILCE-6000L) kit 16-50 F3.5-5.6 OSS (Xam)' DonGia='12490000' HinhAnh='10.jpg' MaNCC='3' SoLuongTon='15' SoLuongBan='0' />
+	<MayAnh id='11' Ten='Nikon D3400 Kit AF-P 18-55 VR' DonGia='9690000' HinhAnh='11.jpg' MaNCC='4' SoLuongTon='10' SoLuongBan='0' />
+	<MayAnh id='12' Ten='Canon PowerShot G7 X Mark II (hang nhap khau)' DonGia='11990000' HinhAnh='12.jpg' MaNCC='2' SoLuongTon='10' SoLuongBan='0' />
+	<MayAnh id='13' Ten='Fujifilm X-A3 Kit XC16-50 F3.5-5.6 OIS II (Nau)' DonGia='10390000' HinhAnh='13.jpg' MaNCC='3' SoLuongTon='19' SoLuongBan='0' />
+	<MayAnh id='14' Ten='Canon EOS 6D Kit EF 24-105 F4L IS USM' DonGia='38000000' HinhAnh='14.jpg' MaNCC='3' SoLuongTon='19' SoLuongBan='0' />
+	<MayAnh id='15' Ten='Canon Ixus 185 (Den)' DonGia='2350000' HinhAnh='15.jpg' MaNCC='3' SoLuongTon='16' SoLuongBan='0' />
+	<MayAnh id='16' Ten='Sony Cybershot DSC W830 (Den)' DonGia='2550000' HinhAnh='16.jpg' MaNCC='1' SoLuongTon='6' SoLuongBan='0' />
+	<MayAnh id='17' Ten='Sony DSC WX220 (Den)' DonGia='3600000' HinhAnh='17.jpg' MaNCC='2' SoLuongTon='11' SoLuongBan='0' />
+	<MayAnh id='18' Ten='Canon EOS 6D Body' DonGia='25590000' HinhAnh='18.jpg' MaNCC='2' SoLuongTon='10' SoLuongBan='0' />
+	<MayAnh id='19' Ten='Canon PowerShot SX430 IS' DonGia='5350000' HinhAnh='19.jpg' MaNCC='3' SoLuongTon='14' SoLuongBan='0' />
+	<MayAnh id='20' Ten='Sony Cybershot DSC-HX350' DonGia='7790000' HinhAnh='20.jpg' MaNCC='3' SoLuongTon='19' SoLuongBan='0' />
+	<MayAnh id='21' Ten='Canon EOS 80D Body (Hang nhap khau)' DonGia='18900000' HinhAnh='21.jpg' MaNCC='2' SoLuongTon='12' SoLuongBan='0' />
+	<MayAnh id='22' Ten='Fujifilm FinePix XP120 (vang)' DonGia='5090000' HinhAnh='22.jpg' MaNCC='1' SoLuongTon='5' SoLuongBan='0' />
+	<MayAnh id='23' Ten='Canon EOS 1300D Kit 18-55mm f/3.5-5.6 III (hang nhap khau)' DonGia='9390000' HinhAnh='23.jpg' MaNCC='2' SoLuongTon='7' SoLuongBan='0' />
+	<MayAnh id='24' Ten='Canon EOS 750D Body + EF50MM F/1.8 STM' DonGia='13900000' HinhAnh='24.jpg' MaNCC='1' SoLuongTon='5' SoLuongBan='0' />
+	<MayAnh id='25' Ten='Nikon Coolpix B700' DonGia='8490000' HinhAnh='25.jpg' MaNCC='1' SoLuongTon='6' SoLuongBan='0' />
+	<MayAnh id='26' Ten='Sony DSC WX220 (Vang)' DonGia='3600000' HinhAnh='26.jpg' MaNCC='2' SoLuongTon='11' SoLuongBan='0' />
+	<MayAnh id='27' Ten='Fujifilm X-A10 kit XC16-50MM F3.5-5.6 OIS II (Nau)' DonGia='7990000' HinhAnh='27.jpg' MaNCC='3' SoLuongTon='19' SoLuongBan='0' />
+	<MayAnh id='28' Ten='Canon EOS 6D Kit EF 24-105 F4L IS USM (hang nhap khau)' DonGia='35790000' HinhAnh='28.jpg' MaNCC='2' SoLuongTon='8' SoLuongBan='0' />
+	<MayAnh id='29' Ten='SONY ALPHA A6500 (ILCE-6500) BODY' DonGia='27490000' HinhAnh='29.jpg' MaNCC='3' SoLuongTon='3' SoLuongBan='0' />
+	<MayAnh id='30' Ten='Nikon D5500 kit AF-P 18-55 VR' DonGia='14890000' HinhAnh='30.jpg' MaNCC='4' SoLuongTon='6' SoLuongBan='0' />
+	<MayAnh id='31' Ten='CANON EOS 3000D KIT 18-55 DC III' DonGia='1410000' HinhAnh='14.png' MaNCC='4' SoLuongTon='50' SoLuongBan='0'></MayAnh>
+	<MayAnh id='32' Ten='SAMSUNG EOS 3000D KIT 18-55 DC III' DonGia='25510000' HinhAnh='21.png' MaNCC='3' SoLuongTon='50' SoLuongBan='0'></MayAnh>
 </DanhSachMayAnh>

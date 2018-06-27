@@ -3,7 +3,6 @@ const url = require('url');
 var config = require('./config');
 
 var cache = require('./cache');
-var cacheData = cache.CacheData;
 
 var User = require('./services/user');
 var Product = require('./services/product');
@@ -27,8 +26,6 @@ app.createServer((req, res) => {
                     res.end(User.list());
                     break
                 case '/products':
-                    // var url_parts = url.parse(req.url, true);
-                    // var query = url_parts.query;
                     let supId = query.supplierId;
                     console.log(supId);
                     if (supId == undefined || supId == ''){
@@ -43,7 +40,6 @@ app.createServer((req, res) => {
                             res.end();
                         })
                     }
-                    // res.end();
                     break
                 case '/bills':
                     res.end(Bill.list());
@@ -77,6 +73,33 @@ app.createServer((req, res) => {
                     User.register(req.body).then(data => {
                         res.writeHeader(200, {'Content-Type': 'text/json'})
                         res.write(JSON.stringify({'message': 'Register successfully'}));
+                        res.end();
+                    }).catch(err => {
+                        res.writeHeader(400, {'Content-Type': 'text/json'})
+                        res.write(JSON.stringify(err));
+                        res.end();
+                    })
+                });
+                break
+                case '/addProduct':
+                req.on('end', () => {
+                    Product.add(req.body).then(data => {
+                        res.writeHeader(200, {'Content-Type': 'text/json'})
+                        res.write(JSON.stringify(data));
+                        res.end();
+                    }).catch(err => {
+                        res.writeHeader(400, {'Content-Type': 'text/json'})
+                        res.write(JSON.stringify(err));
+                        res.end();
+                    })
+                });
+                break
+                case '/addBill':
+                req.on('end', () => {
+                    console.log(req.body)
+                    Bill.add(req.body).then(data => {
+                        res.writeHeader(200, {'Content-Type': 'text/json'})
+                        res.write(JSON.stringify(data));
                         res.end();
                     }).catch(err => {
                         res.writeHeader(400, {'Content-Type': 'text/json'})
