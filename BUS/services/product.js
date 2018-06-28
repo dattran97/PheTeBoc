@@ -47,7 +47,7 @@ class Product {
                     return reject(err);
                 }else{
                     cacheData.updateListProduct();
-                    return resolve(this.list());
+                    return resolve({'message': 'Add successfully'});
                 }
             });
         });

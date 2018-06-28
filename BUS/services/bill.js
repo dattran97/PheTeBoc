@@ -30,7 +30,7 @@ class Bill {
                     return reject(err);
                 }else{
                     cacheData.updateListBill();
-                    return resolve(this.list());
+                    return resolve({'message': 'Add successfully'});
                 }
             });
         });

@@ -30,7 +30,7 @@ class Supplier {
                     return reject(err);
                 }else{
                     cacheData.updateListSupplier();
-                    return resolve(this.list());
+                    return resolve({'message': 'Add successfully'});
                 }
             });
         });

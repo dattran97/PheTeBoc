@@ -18,4 +18,5 @@
 	<NhanVien id="17" Email="nhanvien10@gmail.com" Password="123456" isManager="0"></NhanVien>
 	<NhanVien id="18" Email="nhanvien13@gmail.com" Password="123456" isManager="0"></NhanVien>
 	<NhanVien id="19" Email="nhanvien3@gmail.com" Password="123456" isManager="0"></NhanVien>
+	<NhanVien id="20" Email="dattran14@gmail.com" Password="123456" isManager="0"></NhanVien>
 </DanhSachNhanVien>

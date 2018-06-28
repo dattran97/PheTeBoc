@@ -26,11 +26,20 @@ app.createServer((req, res) => {
                 case '/users':
                     res.end(User.list());
                     break
+                case '/bills':
+                    res.end(Bill.list());
+                    break
+                case '/suppliers':
+                    res.end(Supplier.list());
+                    break
                 case '/products':
                     let supId = query.supplierId;
                     console.log(supId);
+                    //Get all products
                     if (supId == undefined || supId == ''){
                         res.end(Product.list());
+                    
+                    //Get products by supplier id
                     }else{
                         Product.listBySupplier(supId).then(data => {
                             var data = {};
@@ -41,12 +50,6 @@ app.createServer((req, res) => {
                             res.end();
                         })
                     }
-                    break
-                case '/bills':
-                    res.end(Bill.list());
-                    break
-                case '/suppliers':
-                    res.end(Supplier.list());
                     break
                 default: break
             }
@@ -99,7 +102,8 @@ app.createServer((req, res) => {
                     }else{
                         Product.add(req.body).then(data => {
                             res.writeHeader(200, {'Content-Type': 'text/json'})
-                            res.end(data);
+                            res.write(JSON.stringify({'message': 'Register successfully'}));
+                            res.end();
                         }).catch(err => {
                             res.writeHeader(400, {'Content-Type': 'text/json'})
                             res.write(JSON.stringify(err));
@@ -118,7 +122,8 @@ app.createServer((req, res) => {
                     }else{
                         Bill.add(req.body).then(data => {
                             res.writeHeader(200, {'Content-Type': 'text/json'})
-                            res.end(data);
+                            res.write(JSON.stringify({'message': 'Register successfully'}));
+                            res.end();
                         }).catch(err => {
                             res.writeHeader(400, {'Content-Type': 'text/json'})
                             res.write(JSON.stringify(err));
@@ -141,7 +146,8 @@ app.createServer((req, res) => {
                     }else{
                         Supplier.add(req.body).then(data => {
                             res.writeHeader(200, {'Content-Type': 'text/json'})
-                            res.end(data);
+                            res.write(JSON.stringify({'message': 'Register successfully'}));
+                            res.end();
                         }).catch(err => {
                             res.writeHeader(400, {'Content-Type': 'text/json'})
                             res.write(JSON.stringify(err));
