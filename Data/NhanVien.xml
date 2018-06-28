@@ -6,7 +6,6 @@
 	<NhanVien id="5" Email="quanli3@gmail.com" Password="123456" isManager="1"></NhanVien>
 	<NhanVien id="6" Email="quanli4@gmail.com" Password="123456" isManager="1"></NhanVien>
 	<NhanVien id="7" Email="quanli5@gmail.com" Password="123456" isManager="1"></NhanVien>
-<<<<<<< HEAD
 	<NhanVien id="8" Email="nhanvien3@gmail.com" Password="123456" isManager="0"></NhanVien>
 	<NhanVien id="9" Email="nhanvien4@gmail.com" Password="123456" isManager="0"></NhanVien>
 	<NhanVien id="10" Email="nhanvien5@gmail.com" Password="123456" isManager="0"></NhanVien>
@@ -19,6 +18,4 @@
 	<NhanVien id="17" Email="nhanvien10@gmail.com" Password="123456" isManager="0"></NhanVien>
 	<NhanVien id="18" Email="nhanvien13@gmail.com" Password="123456" isManager="0"></NhanVien>
 	<NhanVien id="19" Email="nhanvien3@gmail.com" Password="123456" isManager="0"></NhanVien>
-=======
->>>>>>> 4eb52ad0102103c7538543c71b7a703382d89557
 </DanhSachNhanVien>
