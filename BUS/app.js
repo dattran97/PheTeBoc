@@ -2,8 +2,6 @@ const app = require('http');
 const url = require('url');
 var config = require('./config');
 
-var cache = require('./cache');
-
 var User = require('./services/user');
 var Product = require('./services/product');
 var Bill = require('./services/bill');
@@ -11,6 +9,33 @@ var Supplier = require('./services/supplier');
 
 let dalURL = 'http://localhost:3001';
 var sessions = [];
+
+let getUserByToken = (token) => {
+    let user = sessions.find((user) => user.accessToken == token);
+    if (user == null || user == undefined){
+        return -1;
+    }
+    return user;
+
+}
+
+let checkSession = (email) => {
+    console.log('SESSIONS' + sessions)
+    let user = sessions.find((user) => user.Email == email);
+    console.log('USER' + user)
+    if (user == null || user == undefined){
+        return -1;
+    }
+    return user;
+}
+
+let deleteSession = (token) => {
+    let user = getUserByToken(token);
+    if (user !== -1) {
+        sessions.splice(user, 1);
+    }
+    return sessions;
+}
 
 app.createServer((req, res) => {
     res.setHeader("Access-Control-Allow-Origin", "*");
@@ -61,18 +86,23 @@ app.createServer((req, res) => {
                 case '/login':
                 req.on('end', () => {
                     console.log(req.body);
-                    sessions = User.deleteSession(req.body.email, sessions);
-                    User.login(req.body, sessions).then(data => {
-                        res.writeHeader(200, {'Content-Type': 'text/json'})
-                        sessions.push(data);
-                        console.log(sessions);
-                        res.write(JSON.stringify(data));
+                    let user = checkSession(req.body.email)
+                    if (user == -1 || user == undefined){
+                        User.login(req.body).then(data => {
+                            res.writeHeader(200, {'Content-Type': 'text/json'})
+                            sessions.push(data);
+                            res.write(JSON.stringify(data));
+                            res.end();
+                        }).catch(err => {
+                            res.writeHeader(400, {'Content-Type': 'text/json'})
+                            res.write(JSON.stringify(err));
+                            res.end();
+                        })
+                    }else{
+                        res.writeHeader(401, {'Content-Type': 'text/json'})
+                        res.write(JSON.stringify({'err': 'You have already login'}));
                         res.end();
-                    }).catch(err => {
-                        res.writeHeader(400, {'Content-Type': 'text/json'})
-                        res.write(JSON.stringify(err));
-                        res.end();
-                    })
+                    }
                 });
                 break
                 case '/register':
@@ -90,7 +120,7 @@ app.createServer((req, res) => {
                 break
                 case '/addProduct':
                 req.on('end', () => {
-                    let user = User.getUserByToken(req.headers.accesstoken, sessions)
+                    let user = getUserByToken(req.headers.accesstoken)
                     if (user == -1 || user == undefined){
                         res.writeHeader(401, {'Content-Type': 'text/json'})
                         res.write(JSON.stringify({'err': 'Unauthorization! please login again'}));
@@ -102,7 +132,7 @@ app.createServer((req, res) => {
                     }else{
                         Product.add(req.body).then(data => {
                             res.writeHeader(200, {'Content-Type': 'text/json'})
-                            res.write(JSON.stringify({'message': 'Register successfully'}));
+                            res.write(JSON.stringify({'message': 'Add successfully'}));
                             res.end();
                         }).catch(err => {
                             res.writeHeader(400, {'Content-Type': 'text/json'})
@@ -114,7 +144,7 @@ app.createServer((req, res) => {
                 break
                 case '/addBill':
                 req.on('end', () => {
-                    let user = User.getUserByToken(req.headers.accesstoken, sessions)
+                    let user = getUserByToken(req.headers.accesstoken)
                     if (user == -1 || user == undefined){
                         res.writeHeader(401, {'Content-Type': 'text/json'})
                         res.write(JSON.stringify({'err': 'Unauthorization! please login again'}));
@@ -122,7 +152,7 @@ app.createServer((req, res) => {
                     }else{
                         Bill.add(req.body).then(data => {
                             res.writeHeader(200, {'Content-Type': 'text/json'})
-                            res.write(JSON.stringify({'message': 'Register successfully'}));
+                            res.write(JSON.stringify({'message': 'Add successfully'}));
                             res.end();
                         }).catch(err => {
                             res.writeHeader(400, {'Content-Type': 'text/json'})
@@ -134,7 +164,7 @@ app.createServer((req, res) => {
                 break
                 case '/addSupplier':
                 req.on('end', () => {
-                    let user = User.getUserByToken(req.headers.accesstoken, sessions)
+                    let user = getUserByToken(req.headers.accesstoken)
                     if (user == -1 || user == undefined){
                         res.writeHeader(401, {'Content-Type': 'text/json'})
                         res.write(JSON.stringify({'err': 'Unauthorization! please login again'}));
@@ -146,7 +176,7 @@ app.createServer((req, res) => {
                     }else{
                         Supplier.add(req.body).then(data => {
                             res.writeHeader(200, {'Content-Type': 'text/json'})
-                            res.write(JSON.stringify({'message': 'Register successfully'}));
+                            res.write(JSON.stringify({'message': 'Add successfully'}));
                             res.end();
                         }).catch(err => {
                             res.writeHeader(400, {'Content-Type': 'text/json'})
@@ -160,7 +190,7 @@ app.createServer((req, res) => {
                 req.on('end', () => {
                     let token = req.headers.acccesstoken;
                     console.log(token);
-                    sessions = User.logout(token);
+                    sessions = deleteSession(token);
                     res.writeHeader(200, {'Content-Type': 'text/json'})
                     res.write(JSON.stringify({'message': 'Logout successfully'}));
                     res.end();
