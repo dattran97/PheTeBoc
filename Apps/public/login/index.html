@@ -5,10 +5,9 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>iCamera | Đăng nhập</title>
-
-	<link href="./assets/vendor/css/bootstrap.min.css" rel="stylesheet">
-	<link href="./assets/css/styles.css" rel="stylesheet">
-	<link rel="stylesheet" href="./assets/css/login.css">
+	<link href="../assets/vendor/css/bootstrap.min.css" rel="stylesheet">
+	<link href="../assets/css/styles.css" rel="stylesheet">
+	<link rel="stylesheet" href="../assets/css/login.css">
 
 	<!--[if lt IE 9]>
 <script src="js/html5shiv.js"></script>
@@ -24,7 +23,7 @@
 			<div class="login-panel panel panel-primary">
 				<div class="panel-heading">ĐĂNG NHẬP</div>
 				<div class="panel-body">
-					<form method="POST" role="form" autocomplete="off">
+					<form method="POST" action="/" role="form" autocomplete="off">
 						<fieldset>
 
 							<div class="input-group">
@@ -40,12 +39,13 @@
 									</span>
 								<input class="form-control" id="pass" placeholder="Password" name="password" type="password" value="">
 							</div>
-							<div class="checkbox">
+							<br>
+							<!-- <div class="checkbox">
 								<label>
 									<input name="remember" type="checkbox" value="Remember Me">Ghi nhớ đăng nhập
 								</label>
-							</div>
-							<button type="submit" class="btn btn-primary btn-block btn-dark" id="loginBtn">Đăng nhập</button>
+							</div> -->
+							<button type="submit" class="btn btn-primary btn-block" id="loginBtn">Đăng nhập</button>
 						</fieldset>
 					</form>
 				</div>
@@ -54,9 +54,9 @@
 		<!-- /.col-->
 	</div>
 	<!-- /.row -->
-	<script src="./assets/vendor/js/jquery-1.11.1.min.js"></script>
-	<script src="./assets/vendor/js/bootstrap.min.js"></script>
-	<script src="./assets/js/login.js"></script>
+	<script src="../assets/vendor/js/jquery-1.11.1.min.js"></script>
+	<script src="../assets/vendor/js/bootstrap.min.js"></script>
+	<script src="../assets/js/login.js"></script>
 </body>
 
 </html>
