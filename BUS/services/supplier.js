@@ -29,8 +29,8 @@ class Supplier {
                 if (err) {
                     return reject(err);
                 }else{
-                    cacheData.updateListSupplier(JSON.stringify(body));
-                    return resolve(body);
+                    cacheData.updateListSupplier();
+                    return resolve(this.list());
                 }
             });
         });

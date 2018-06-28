@@ -59,8 +59,7 @@ http.createServer(function (req, res) {
                         res.end(data);
                     }).catch(err => {
                         res.writeHeader(400, {'Content-Type': 'text/json'})
-                        res.write(JSON.stringify(err));
-                        res.end();
+                        res.end(JSON.stringify(err));
                     })
 				});
 				case '/addProduct':
@@ -71,8 +70,7 @@ http.createServer(function (req, res) {
                         res.end(data);
                     }).catch(err => {
                         res.writeHeader(400, {'Content-Type': 'text/json'})
-                        res.write(JSON.stringify(err));
-                        res.end();
+                        res.end(JSON.stringify(err));
                     })
 				});
 				case '/addBill':
@@ -83,8 +81,7 @@ http.createServer(function (req, res) {
                         res.end(data);
                     }).catch(err => {
                         res.writeHeader(400, {'Content-Type': 'text/json'})
-                        res.write(JSON.stringify(err));
-                        res.end();
+                        res.end(JSON.stringify(err));
                     })
 				});
 				break
@@ -96,8 +93,7 @@ http.createServer(function (req, res) {
                         res.end(data);
                     }).catch(err => {
                         res.writeHeader(400, {'Content-Type': 'text/json'})
-                        res.write(JSON.stringify(err));
-                        res.end();
+                        res.end(JSON.stringify(err));
                     })
 				});
 				break

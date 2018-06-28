@@ -60,7 +60,7 @@ class User {
                 if (err) {
                     return reject(err);
                 }else{
-                    cacheData.updateListUser(JSON.stringify(body));
+                    cacheData.updateListUser();
                     return resolve({'message': 'Register successfully'});
                 }
             });

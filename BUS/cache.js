@@ -56,8 +56,10 @@ CacheData = new class Cache {
         }
     }
 
-    updateListUser(list) {
-        this.userCache = list;
+    updateListUser() {
+        get(userPath).then(result => {
+            this.userCache = result;
+        })
     }
 
     getListProduct() {
@@ -71,8 +73,11 @@ CacheData = new class Cache {
         }
     }
 
-    updateListProduct(list) {
-        this.productCache = list;
+    updateListProduct() {
+        get(productPath).then(result => {
+            this.productCache = result;
+            return this.productCache;
+        });
     }
 
     getListBill() {
@@ -87,7 +92,10 @@ CacheData = new class Cache {
     }
 
     updateListBill(list) {
-        this.billCache = list;
+        get(billPath).then(result => {
+            this.billCache = result;
+            return this.billCache;
+        });
     }
 
     getListSupplier() {
@@ -102,7 +110,10 @@ CacheData = new class Cache {
     }
 
     updateListSupplier(list) {
-        this.supplierCache = list;
+        get(supplierPath).then(result => {
+            this.supplierCache = result;
+            return this.supplierCache;
+        });
     }
 }
 

@@ -29,8 +29,8 @@ class Bill {
                 if (err) {
                     return reject(err);
                 }else{
-                    cacheData.updateListBill(JSON.stringify(body));
-                    return resolve(body);
+                    cacheData.updateListBill();
+                    return resolve(this.list());
                 }
             });
         });
